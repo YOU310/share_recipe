@@ -1,0 +1,9 @@
+<p>新規投稿</p>
+<%= form_with model: @post, local: true do |f| %>
+  <p>商品名<%= f.text_field :title %></p>
+  <p>材料<%= f.text_field :material %></p>
+  <p>手順<%= f.text_field :recipe %></p>
+  <p>イメージ画像<%= f.file_field :image, :accept => "image/*" %></p>
+  <p>動画<%= f.file_field :video, :accept => "video/*" %></p>
+  <%= f.submit "投稿" %>
+<% end %>
