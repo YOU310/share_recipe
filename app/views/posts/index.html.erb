@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
   <p>
-    商品名：<%= post.title%>
+    <%= post.title%>：
     <%= post.image %>
     commment
     <%= link_to "詳細", "/posts/#{post.id} "%>
