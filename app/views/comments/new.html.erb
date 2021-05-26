@@ -1,0 +1,10 @@
+<h1>新規コメント投稿</h1>
+<%= form_with model: @comment, local: true do |f| %>
+  <%= f.label :title, "タイトル" %>
+  <%= f.label :content, "コメント内容" %>
+  <%= f.text_field :content %>
+  <%= f.label :image, "画像" %>
+  <%= f.file_field :image %>
+  <%= f.submit "投稿" %>
+<% end %>
+

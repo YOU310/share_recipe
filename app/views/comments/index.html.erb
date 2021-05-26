@@ -1,0 +1,10 @@
+<h1>コメント一覧</h1>
+<% @comments.each do |comment| %>
+  <p>
+    <%= comment.title %>
+    From:<%= comment.user.name %>
+    <%= link_to "詳細", comment %>
+  </p>
+<% end %>
+
+<%= link_to "戻る", posts_path %>

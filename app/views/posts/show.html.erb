@@ -2,5 +2,6 @@
 <p><%= @post.title %></p>
 <p>使用する材料：<%= @post.material %></p>
 <p>手順：<%= @post.recipe %></p>
+<p><%= link_to  "投稿されたコメントを見る", comments_path %></p>
 <p>＜イメージ画像＞<%= @post.image %></p>
 <p>＜レシピ動画＞<%= @post.video %></p>
