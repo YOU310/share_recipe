@@ -3,8 +3,8 @@
   <p>
     <%= comment.title %>
     From:<%= comment.user.name %>
-    <%= link_to "詳細", comment %>
+    <%= link_to "確認", post_comments_path %>
   </p>
 <% end %>
 
-<%= link_to "戻る", posts_path %>
+<%= link_to "戻る", :back %>

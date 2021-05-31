@@ -12,8 +12,13 @@ class CommentsController < ApplicationController
   end
 
   def create
-    Comment.create!(comment_params)
-    redirect_to comment_path
+    binding.pry
+    @comment = current_user.comments.new(comment_params)
+    if @comment.save
+      redirect_to action: "index"
+    else
+      redirect_to action: "index", alert: "ERROR!"
+    end
   end
 
   def edit
@@ -32,6 +37,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:title, :content, :image)
+    params.permit(:title, :content, :image, { post_ids: [] })
   end
 end
