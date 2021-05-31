@@ -1,9 +1,12 @@
+<h3>レシピ一覧</h3>
 <% @posts.each do |post| %>
   <p>
-    <%= post.title%>：
+    <%= post.title%>
+    投稿者：<%= post.user.name %>
     <%= post.image %>
-    commment
-    <%= link_to "詳細", "/posts/#{post.id} "%>
+    <%= link_to "詳細", "/posts/#{post.id}" %>
   </p>
 <% end %>
+
+<%# 表にしよう %>
   
