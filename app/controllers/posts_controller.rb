@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.includes(:user).all
   end
 
   def new
@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create!(post_params)
+    current_user.posts.create!(post_params)
     redirect_to action: :index
   end
 
@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
     params.require(:post).permit(:title, :material, :recipe, :video, :image)
   end
