@@ -1,9 +1,12 @@
 class CommentsController < ApplicationController
   def index
-    @comments = Comment.all
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments
+    # @post = Post.find(params[:id])
   end
 
   def show
+    # @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
   end
 
@@ -12,13 +15,13 @@ class CommentsController < ApplicationController
   end
 
   def create
-    binding.pry
-    @comment = current_user.comments.new(comment_params)
-    if @comment.save
-      redirect_to action: "index"
-    else
-      redirect_to action: "index", alert: "ERROR!"
-    end
+    # binding.pry
+    @comment = current_user.comments.create!(comment_params, post_id: params[:post.id])
+    # if @comment.save
+    #   redirect_to action: "index", alert: "ok"
+    # else
+    #   redirect_to action: "index", alert: "ERROR!"
+    # end
   end
 
   def edit
