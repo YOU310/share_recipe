@@ -11,17 +11,12 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @commnet = Comment.new
+    @post = Post.find(params[:post_id])
+    @comment = Comment.new
   end
 
   def create
-    # binding.pry
-    @comment = current_user.comments.create!(comment_params, post_id: params[:post.id])
-    # if @comment.save
-    #   redirect_to action: "index", alert: "ok"
-    # else
-    #   redirect_to action: "index", alert: "ERROR!"
-    # end
+    current_user.comments.create!(comment_params)
   end
 
   def edit
@@ -40,6 +35,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.permit(:title, :content, :image, { post_ids: [] })
+    params.require(:comment).permit(:title, :content, :image).merge(user_id: current_user.id, post_id: params[:post_id])
   end
 end
