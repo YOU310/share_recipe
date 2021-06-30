@@ -1,4 +1,7 @@
 <h1>コメント一覧</h1>
+<%= link_to "この記事にコメントする", new_post_comment_path(@post) %>
+<%= link_to "戻る", :back %>
+<hr>
 <% @comments.each do |comment| %>
   <% if comment.title.present? %>
     <p>タイトル：<%= comment.title %></p>
@@ -6,9 +9,8 @@
     <p>タイトル：無題</p>
   <% end %>
   <p>From：<%= comment.user.name %></p>
-<%# <% binding.pry %>
   <%= link_to "コメント詳細", post_comment_path(comment.post.id, comment.id) %>
   <hr>
 <% end %>
 
-<%= link_to "戻る", :back %>
+
