@@ -26,7 +26,7 @@ ja:
         comments: コメント
       comment:
         user: 投稿主
-        post: 投稿先
+        post: 投稿先レシピ
         content: コメント文
         image: 画像
         title: タイトル
