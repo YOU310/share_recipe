@@ -12,6 +12,7 @@ gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 
+gem "activeadmin"
 gem "devise"
 gem "devise-i18n"
 gem "rails-i18n", "~> 6.0"
