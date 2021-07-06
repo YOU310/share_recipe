@@ -29,7 +29,7 @@ ja:
     models:
       user: ユーザー
       admin_user: 管理者ユーザー
-      comment: コメント
+      admin_comment: 管理者コメント
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。

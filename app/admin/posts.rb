@@ -15,6 +15,15 @@ ActiveAdmin.register Post do
   #   permitted
   # end
 
+  index do
+    column :id
+    column :title
+    column :user
+    column :created_at
+    column :updated_at
+    actions
+  end
+
   permit_params :name, :video, :image, :title, :material, :recipe
   
 end

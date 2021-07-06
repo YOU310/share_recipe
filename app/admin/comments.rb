@@ -15,5 +15,13 @@ ActiveAdmin.register Comment do
   #   permitted
   # end
   
+  index do
+    column :id
+    column :title
+    column :user
+    column :created_at
+    column :updated_at
+    actions
+  end
   permit_params :user, :post, :content, :image
 end

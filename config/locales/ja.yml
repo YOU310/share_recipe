@@ -16,8 +16,7 @@ ja:
       comment: レシピコメント
     attributes:
       post:
-        user: 店舗名
-        name: 店舗名
+        user: 作成店舗
         video: 動画
         image: 画像
         title: 商品名
