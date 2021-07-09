@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def index
-    @comments = Comment.all
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments.order(id: :DESC)
   end
 
   def show
@@ -8,17 +9,14 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @commnet = Comment.new
+    @post = Post.find(params[:post_id])
+    @comment = Comment.new
   end
 
   def create
-    binding.pry
-    @comment = current_user.comments.new(comment_params)
-    if @comment.save
-      redirect_to action: "index"
-    else
-      redirect_to action: "index", alert: "ERROR!"
-    end
+    @post = Post.find(params[:post_id])
+    current_user.comments.create!(comment_params)
+    redirect_to post_comments_path(@post)
   end
 
   def edit
@@ -36,7 +34,8 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def comment_params
-    params.permit(:title, :content, :image, { post_ids: [] })
+    params.require(:comment).permit(:title, :content, :image).merge(user_id: current_user.id, post_id: params[:post_id])
   end
 end

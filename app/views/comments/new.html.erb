@@ -1,10 +1,7 @@
 <h1>新規コメント投稿</h1>
-<%= form_with model: @comment, method: :post, url: "/posts/:post_id/comments", local: true do |f| %>
+<%= form_with model: [@post, @comment] do |f| %>
   <p>タイトル<%= f.text_field :title %></p>
-
   <p>本文<%= f.text_field :content %></p>
-  
   <p>イメージ画像<%= f.file_field :image %></p>
-  
   <%= f.submit "投稿" %>
 <% end %>

@@ -1,6 +1,12 @@
 <h1>コメント詳細</h1>
-<p>タイトル：<%= @comment.title %></p>
-<p>From：<%= @comment.user.name %></p>
-<p><%= @comment.content %></p>
-<p><%= @comment.image %></p>
+  <% if @comment.title.present? %>
+    <p>タイトル：<%= @comment.title %></p>
+  <% else %>
+    <p>タイトル：無題</p>
+  <% end %>
+  <p>From：<%= @comment.user.name %></p>
+  <p><%= @comment.content %></p>
+  <p><%= @comment.image %></p>
+  <hr>
+
 <%= link_to "戻る", post_comment_path %>

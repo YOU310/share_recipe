@@ -1,17 +1,9 @@
-user1 = User.create!(name: 'test1', email: 'test1@example.com', password: 'password1')
-user2 = User.create!(name: 'test2', email: 'test2@example.com', password: 'password2')
-user3 = User.create!(name: 'test3', email: 'test3@example.com', password: 'password3')
+email = 'test@example.com'
+password = 'password'
 
-post1 = Post.create!(title: 'Hello', user_id: user2.id)
-post2 = Post.create!(title: 'Hi', user_id: user3.id)
-post3 = Post.create!(title: 'Bye', user_id: user2.id)
-
-Comment.create!(content: 'comment1', post_id: post1.id, user_id: user3.id)
-Comment.create!(content: 'comment2', post_id: post1.id, user_id: user1.id)
-Comment.create!(content: 'comment3', post_id: post2.id, user_id: user3.id)
-
-puts 'ok'
-
-# Comment.all => ok
-# post1.comments => ok
-# @comments = Comment.all ?
+# テストユーザーが存在しないときだけ作成
+User.find_or_create_by!(email: email) do |user|
+  user.password = password
+  puts 'ユーザーの初期データインポートに成功しました。'
+end
+AdminUser.create!(email: "admin@example.com", password: "password", password_confirmation: "password") if Rails.env.development?

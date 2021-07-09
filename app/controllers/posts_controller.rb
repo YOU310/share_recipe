@@ -1,15 +1,15 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes(:user).all
+    @posts = Post.all.order(id: :DESC)
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.new
   end
 
   def create
     current_user.posts.create!(post_params)
-    redirect_to action: :index
+    redirect_to posts_path
   end
 
   def show
