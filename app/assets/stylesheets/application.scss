@@ -40,6 +40,15 @@
 }
 
 body {
-  padding-top: 80px;
+  padding-top: 100px;
   background-color: ivory
+}
+
+.navbar-brand {
+  padding: 0px;
+  height: 100px;
+}
+
+.nav-item {
+  font-family: sans-serif;
 }
