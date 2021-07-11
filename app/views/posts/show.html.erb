@@ -1,5 +1,5 @@
 <h3>レシピ詳細</h3>
-<p><%= @post.title %></p>
+<p><%= @post.title %>（<%= @post.genre_i18n %>）</p>
 <p>投稿者：<%= @post.user.name %></p>
 <p>使用する材料：<%= @post.material %></p>
 <p>手順：<%= @post.recipe %></p>

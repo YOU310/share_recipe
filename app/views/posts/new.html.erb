@@ -1,6 +1,8 @@
-<p>新規投稿</p>
+<h1>新規投稿</h1>
+<br \>
 <%= form_with model: @post, local: true do |f| %>
   <p>商品名<%= f.text_field :title %></p>
+  <p>ジャンル<%= f.select :genre, Post.genres_i18n.invert %>
   <p>材料<%= f.text_area :material %></p>
   <p>手順<%= f.text_area :recipe %></p>
   <p>イメージ画像<%= f.file_field :image, :accept => "image/*" %></p>
