@@ -23,6 +23,7 @@ ja:
         material: 材料
         recipe: 作り方
         comments: コメント
+        genre: ジャンル
       comment:
         user: 投稿主
         post: 投稿先レシピ
