@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
 
-  mount_uploader :image, :RecipeImageUploader
+  mount_uploader :image, RecipeImageUploader
 
   enum genre: {
     invisible: 0,
