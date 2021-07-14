@@ -1,3 +1,11 @@
+h3 {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.card-base{
+  margin: 15px 0 15px 0;
+}
 .card {
   max-width: 380px;
   height: 450px;
@@ -8,4 +16,21 @@
   height: 250px;
   object-fit: cover;
 }
+
+.btn-area {
+  width: 100%;
+  // display: flex;
+  // margin: 0 auto;
+  text-align: center;
+}
+
+.bot {
+  width: 40%;
+  margin: 0 10px 0 10px;
+}
+
+// .btn {
+//   float: left;
+//   margin: 0 auto;
+// }
 
