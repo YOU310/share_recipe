@@ -13,13 +13,13 @@ gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 
 gem "activeadmin"
+gem "carrierwave"
 gem "devise"
 gem "devise-i18n"
 gem "enum_help"
+gem "mini_magick"
 gem "pry-byebug"
 gem "rails-i18n", "~> 6.0"
-gem "carrierwave"
-gem "mini_magick"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
