@@ -2,7 +2,7 @@ ja:
   enums:
     post:
       genre:
-        invisible: "非表示"
+        invisible: "分類指定無し"
         appetizer: "前菜/温菜"
         main: "メイン/パスタなど"
         dessert: "デザート"

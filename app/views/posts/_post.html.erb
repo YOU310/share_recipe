@@ -1,7 +1,7 @@
 <div class="card-base col-md-6 col-lg-4">
   <div class="card mx-auto">
     <% if post.image? %>
-      <img src="<%= post.image_url %>" class="card-img-top">
+      <img src="<%= post.image_url %>" class="card-img-top img">
     <% end %>
 
     <div class="card-body">
@@ -10,7 +10,7 @@
       <p class="card-text">分類：<%= post.genre_i18n %></p>
       <div class="btn-area">
         <%= link_to("詳細", "/posts/#{post.id}", class: "btn btn-primary recipe-btn")%>
-        <a href="#" class="btn btn-primary recipe-btn">お気に</a>
+        <a href="#" class="btn btn-primary recipe-btn">★登録</a>
       </div>
     </div>
   </div>

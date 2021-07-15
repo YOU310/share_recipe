@@ -11,7 +11,7 @@ h3 {
   height: 450px;
 }
 
-.card-img-top {
+.img {
   width: 100%;
   height: 250px;
   object-fit: cover;
@@ -19,10 +19,73 @@ h3 {
 
 .btn-area {
   width: 100%;
-  text-align: center;
 }
 
 .recipe-btn {
   width: 40%;
   margin: 0 10px 0 10px;
+}
+
+.recipe-base {
+  width: 90%;
+  background-color: white;
+  border: 1px solid;
+  border-color: chocolate;
+  border-radius: 8px;
+}
+
+.show-head-right div {
+  margin-top: 10px;
+}
+
+.title-area {
+  width: 100%;
+  display: flex;
+}
+
+.recipe-title {
+  // width: 80%;
+}
+
+.show-like-btn {
+margin: auto 10px auto auto;
+}
+
+.caption {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.recipe-title {
+  margin: 10px 0 0 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: coral;
+}
+
+.show-head {
+  display: flex;
+}
+
+.show-top-left {
+  width: 50%;
+  margin: 0 10px 0 10px;
+}
+
+.show-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.show-head-right {
+  margin: 0 10px 0 10px;
+}
+
+.show-recipe {
+  margin: 20px 0 0 15px;
+}
+
+.show-video {
+  margin: 20px 0 0 15px;
 }
