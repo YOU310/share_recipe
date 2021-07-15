@@ -21,13 +21,13 @@
       </div>
       <div class="material">
         <span class="caption">使用する材料：</span>
-        <p><%= simple_format(@post.material) %></p>
+        <div class="show-content"><%= simple_format(@post.material) %></div>
       </div>
     </div>
   </div>
   <div class="show-recipe">
     <span class="caption">作り方：</span>
-    <p><%= simple_format(@post.recipe) %></p>
+    <div class="show-content"><%= simple_format(@post.recipe) %></div>
   </div>
   <div class="show-video">
     <span class="caption">作り方動画：</span>
