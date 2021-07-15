@@ -57,10 +57,7 @@ ActiveAdmin.register Post do
     f.actions
   end
 
-  filter :genre, as: :select, collection: Post.genres_i18n.invert.transform_values {|v| Post.genres[v] }
+  filter :genre, as: :select, collection: Post.genres_i18n.invert.transform_values { |v| Post.genres[v] }
   filter :user
   filter :title
-
 end
-
-

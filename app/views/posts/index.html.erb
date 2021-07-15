@@ -1,12 +1,7 @@
 <h3>レシピ一覧</h3>
-<% @posts.each do |post| %>
-  <p>
-    <%= post.title%>
-    投稿者：<%= post.user.name %>
-    <%= post.image %>
-    <%= link_to "詳細", "/posts/#{post.id}" %>
-  </p>
-<% end %>
-
-<%# 表にしよう %>
+<div class="container">
+  <div class="row">
+    <%= render partial: "post", collection: @posts %>
+  </div>
+</div>
   
