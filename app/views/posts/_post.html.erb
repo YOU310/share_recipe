@@ -5,12 +5,12 @@
     <% end %>
 
     <div class="card-bot">
-      <h5 class="card-title"><%= post.title %></h5>
+      <h5 class="card-title"><%= simple_format(post.title) %></h5>
       <p class="card-text">投稿者：<%= post.user.name %></p>
       <p class="card-text">分類：<%= post.genre_i18n %></p>
       <div class="btn-area">
         <%= link_to("詳細", "/posts/#{post.id}", class: "btn btn-primary recipe-btn")%>
-        <a href="#" class="btn btn-primary recipe-btn">★登録</a>
+        <a href="#" class="btn btn-primary recipe-btn text-nowrap">お気に入り登録</a>
       </div>
     </div>
   </div>
