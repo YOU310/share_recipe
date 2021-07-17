@@ -1,6 +1,12 @@
 <h3>レシピ一覧（<%= index_title(params[:genre]) %>）</h3>
 
+<%= paginate @posts %>
+
 <div class="row">
   <%= render partial: "post", collection: @posts %>
 </div>
+
+<%= paginate @posts %>
+
+
   

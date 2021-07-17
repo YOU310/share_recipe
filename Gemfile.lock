@@ -305,6 +305,7 @@ DEPENDENCIES
   devise-i18n
   enum_help
   jbuilder (~> 2.7)
+  kaminari
   listen (~> 3.3)
   mini_magick
   pg (~> 1.1)
