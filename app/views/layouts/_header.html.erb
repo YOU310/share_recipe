@@ -22,11 +22,6 @@
             <%= link_to root_path(genre: "drink") do%><li class="dropdown-item">&nbsp;ドリンク</li><% end %>
           </ul>
         </li>
-
-        <%# <li class="nav-item active h5">
-          <%= link_to "レシピ一覧", root_path, class: "nav-link active text-danger" %>
-        <%# </li> %>
-
         <li class="nav-item active h5">
           <%= link_to "新規投稿", new_post_path, class: "nav-link active text-danger" %>
         </li>
@@ -39,11 +34,14 @@
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav-link active" %>
         </li>
       <% else %>
-        <li class="nav-item active">
-          <%= link_to "新規ユーザー登録", new_user_registration_path, class: "nav-link active" %>
+        <li class="nav-item active h5">
+          <%= link_to "新規ユーザー登録", new_user_registration_path, class: "nav-link active text-success" %>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item active h5">
           <%= link_to "ログイン", new_user_session_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item active h5">
+          <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "nav-link active text-primary" %>
         </li>
       <% end %>
     </ul>
