@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.order(id: :DESC)
+    # @posts = Post.order(id: :DESC)
+    @posts = Post.genre_classification(params[:genre])
   end
 
   def new
