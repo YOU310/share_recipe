@@ -27,5 +27,12 @@ StringLiterals:
 
 Layout/LineLength:
   Max: 160
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/BlockLength:
+  Exclude:
+    - "app/admin/**/*"
 # Documentational:
 #   Enabled: false

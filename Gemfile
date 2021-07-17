@@ -15,12 +15,12 @@ gem "webpacker", "~> 5.0"
 gem "activeadmin"
 gem "carrierwave"
 gem "devise"
+gem "devise-bootstrap-views"
 gem "devise-i18n"
 gem "enum_help"
 gem "mini_magick"
 gem "pry-byebug"
 gem "rails-i18n", "~> 6.0"
-gem "devise-bootstrap-views"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
