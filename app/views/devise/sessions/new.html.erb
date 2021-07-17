@@ -21,8 +21,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.submit  t('.sign_in'), class: 'btn btn-primary' %>
+    <%= f.submit  t('.sign_in'), class: 'btn btn-primary w-100' %>
   </div>
 <% end %>
-
+<hr>
+<div class="btn btn-success w-100">
+  <%= link_to t('.guest_sign_in'), users_guest_sign_in_path, class: "text-white" %>
+</div>
 <%= render 'devise/shared/links' %>
