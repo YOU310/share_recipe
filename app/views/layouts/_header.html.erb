@@ -9,31 +9,37 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle h5 text-danger" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            レシピ一覧
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li class="dropdown-item"><%= link_to "全レシピ", root_path %></li>
+            <li class="dropdown-item"><%= link_to "指定無し", root_path(genre: "inbisible") %></li>
+            <li class="dropdown-item"><%= link_to "前菜/温菜", root_path(genre: "appetizer") %></li>
+            <li class="dropdown-item"><%= link_to "メイン/パスタなど", root_path(genre: "main") %></li>
+            <li class="dropdown-item"><%= link_to "デザート", root_path(genre: "dessert") %></li>
+            <li class="dropdown-item"><%= link_to "ドリンク", root_path(genre: "drink") %></li>
+            <li class="dropdown-item" href="#">Another action</li>
+            <li class="dropdown-item" href="#">Something else here</li>
+          </ul>
+        </li>
 
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+        <%# <li class="nav-item active h5">
+          <%= link_to "レシピ一覧", root_path, class: "nav-link active text-danger" %>
+        <%# </li> %>
 
-      <li class="nav-item active h5">
-        <%= link_to "レシピ一覧", root_path, class: "nav-link active text-danger" %>
-      </li>
-      <li class="nav-item active h5">
-        <%= link_to "新規投稿", new_post_path, class: "nav-link active text-danger" %>
-      </li>
-      <li class="nav-item active h5">
-        <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-link active text-success" %>
-      </li>
-      <li class="nav-item active h5">
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav-link active" %>
-      </li>
+        <li class="nav-item active h5">
+          <%= link_to "新規投稿", new_post_path, class: "nav-link active text-danger" %>
+        </li>
+
+        <li class="nav-item active h5">
+          <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-link active text-success" %>
+        </li>
+
+        <li class="nav-item active h5">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav-link active" %>
+        </li>
       <% else %>
         <li class="nav-item active">
           <%= link_to "新規ユーザー登録", new_user_registration_path, class: "nav-link active" %>
