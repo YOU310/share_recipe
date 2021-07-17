@@ -9,18 +9,35 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-      <li class="nav-item active h5">
-        <%= link_to "レシピ一覧", root_path, class: "nav-link active text-danger" %>
-      </li>
-      <li class="nav-item active h5">
-        <%= link_to "新規投稿", new_post_path, class: "nav-link active text-danger" %>
-      </li>
-      <li class="nav-item active h5">
-        <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-link active text-success" %>
-      </li>
-      <li class="nav-item active h5">
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav-link active" %>
-      </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle h5 text-danger" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            レシピ一覧
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to root_path do%><li class="dropdown-item">全レシピ</li><% end %>
+            <%= link_to root_path(genre: "invisible") do%><li class="dropdown-item">&nbsp;分類未設定</li><% end %>
+            <%= link_to root_path(genre: "appetizer") do%><li class="dropdown-item">&nbsp;前菜/温菜</li><% end %>
+            <%= link_to root_path(genre: "main") do%><li class="dropdown-item">&nbsp;メイン/パスタなど</li><% end %>
+            <%= link_to root_path(genre: "dessert") do%><li class="dropdown-item">&nbsp;デザート</li><% end %>
+            <%= link_to root_path(genre: "drink") do%><li class="dropdown-item">&nbsp;ドリンク</li><% end %>
+          </ul>
+        </li>
+
+        <%# <li class="nav-item active h5">
+          <%= link_to "レシピ一覧", root_path, class: "nav-link active text-danger" %>
+        <%# </li> %>
+
+        <li class="nav-item active h5">
+          <%= link_to "新規投稿", new_post_path, class: "nav-link active text-danger" %>
+        </li>
+
+        <li class="nav-item active h5">
+          <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-link active text-success" %>
+        </li>
+
+        <li class="nav-item active h5">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav-link active" %>
+        </li>
       <% else %>
         <li class="nav-item active">
           <%= link_to "新規ユーザー登録", new_user_registration_path, class: "nav-link active" %>

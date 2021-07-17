@@ -1,7 +1,5 @@
-<h3>レシピ一覧</h3>
-<%# <div class="container"> %>
+<h3>レシピ一覧（<%= index_title(params[:genre]) %>）</h3>
   <div class="row">
     <%= render partial: "post", collection: @posts %>
   </div>
-<%# </div> %>
   

@@ -11,4 +11,21 @@ class Post < ApplicationRecord
     dessert: 3,
     drink: 4
   }
+
+  def self.genre_classification(genre)
+    case genre
+    when nil
+      order(id: :DESC)
+    when "invisible"
+      where(genre: :invisible).order(id: :DESC)
+    when "appetizer"
+      where(genre: :appetizer).order(id: :DESC)
+    when "main"
+      where(genre: :main).order(id: :DESC)
+    when "dessert"
+      where(genre: :dessert).order(id: :DESC)
+    when "drink"
+      where(genre: :drink).order(id: :DESC)
+    end
+  end
 end
