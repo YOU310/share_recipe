@@ -1,5 +1,5 @@
 h3 {
-  padding-top: 10px;
+  padding: 10px 0;
   text-align: center;
 }
 
@@ -8,21 +8,107 @@ h3 {
 }
 .card {
   max-width: 380px;
-  height: 450px;
+  height: 500px;
 }
 
-.card-img-top {
+.card-title {
+  font-weight: bold;
+  border-bottom: solid 1px black;
+  padding: 15px 15px;
+}
+
+.img {
   width: 100%;
   height: 250px;
   object-fit: cover;
 }
 
+.card-bot {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text {
+  padding: 0 15px;
+}
 .btn-area {
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: auto 0 15px 0;
 }
 
 .recipe-btn {
-  width: 40%;
-  margin: 0 10px 0 10px;
+  width: 45%;
+  margin: auto 10px 0 10px;
+}
+
+.recipe-base {
+  width: 90%;
+  background-color: white;
+  border: 1px solid;
+  border-color: chocolate;
+  border-radius: 8px;
+}
+
+.show-head-right div {
+  margin-top: 10px;
+}
+
+.show-like-btn-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.show-like-btn {
+  align-items: center;
+  height: 40px;
+  align-content: center;
+}
+
+.caption {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.show-content {
+  padding-left: 20px;
+}
+
+.recipe-title-area {
+  font-weight: bold;
+  font-size: 24px;
+  color: coral;
+  padding: 10px;
+  width: 300px;
+}
+
+.recipe-title {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  padding: 15px;
+}
+
+.show-head {
+  display: flex;
+}
+
+.show-top-left {
+  width: 50%;
+}
+
+.show-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.show-recipe {
+  margin: 20px 0 0 15px;
+}
+
+.show-video {
+  margin: 20px 0 0 15px;
 }

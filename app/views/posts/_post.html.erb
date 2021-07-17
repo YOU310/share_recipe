@@ -1,16 +1,16 @@
 <div class="card-base col-md-6 col-lg-4">
   <div class="card mx-auto">
     <% if post.image? %>
-      <img src="<%= post.image_url %>" class="card-img-top">
+      <img src="<%= post.image_url %>" class="card-img-top img">
     <% end %>
 
-    <div class="card-body">
-      <h5 class="card-title"><%= post.title %></h5>
+    <div class="card-bot">
+      <h5 class="card-title"><%= simple_format(post.title) %></h5>
       <p class="card-text">投稿者：<%= post.user.name %></p>
       <p class="card-text">分類：<%= post.genre_i18n %></p>
       <div class="btn-area">
         <%= link_to("詳細", "/posts/#{post.id}", class: "btn btn-primary recipe-btn")%>
-        <a href="#" class="btn btn-primary recipe-btn">お気に</a>
+        <a href="#" class="btn btn-primary recipe-btn text-nowrap">お気に入り登録</a>
       </div>
     </div>
   </div>

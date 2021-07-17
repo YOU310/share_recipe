@@ -1,10 +1,43 @@
 <h3>レシピ詳細</h3>
-<p><%= @post.title %>（<%= @post.genre_i18n %>）</p>
-<p>投稿者：<%= @post.user.name %></p>
-<p>使用する材料：<%= @post.material %></p>
-<p>手順：<%= @post.recipe %></p>
-<p>＜イメージ画像＞<%= @post.image %></p>
-<p>＜イメージ動画＞<%= @post.video %></p>
+<%# <div class="container"> %>
+<div class="recipe-base mx-auto row">
+  <%# <div class="title-area"> %>
+    <div class="recipe-title-area col-md-9">
+      <p class="mt-0 mb-0 recipe-title"><%= @post.title %></p>
+    </div>
+    <div class="col-md-3 show-like-btn-area">
+      <a href="#" class="btn btn-primary show-like-btn text-nowrap">お気に入り登録</a>
+    </div>
+  <%# </div> %>
+
+
+  <%# <div class="show-head"> %>
+    <div class="show-top-left col-md-6">
+      <img src="<%= @post.image_url %>" class="show-img">
+    </div>
+    <div class="show-head-right col-md-6">
+      <div>
+        <span class="caption">分類：</span><span><%= @post.genre_i18n %></span>
+      </div>
+      <div>
+        <span class="caption">投稿者：</span><span><%= @post.user.name %></span>
+      </div>
+      <div class="material">
+        <span class="caption">使用する材料：</span>
+        <div class="show-content"><%= simple_format(@post.material) %></div>
+      </div>
+    </div>
+  <%# </div> %>
+  <div class="show-recipe col-12">
+    <span class="caption">作り方：</span>
+    <div class="show-content"><%= simple_format(@post.recipe) %></div>
+  </div>
+  <div class="show-video col-12">
+    <span class="caption">作り方動画：</span>
+    <p><%= @post.video %></p>
+  </div>
+</div>
+<%# </div> %>
 <hr>
 <p>
 <%= link_to "この記事にコメントする", new_post_comment_path(@post) %>
