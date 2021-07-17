@@ -14,14 +14,12 @@
             レシピ一覧
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li class="dropdown-item"><%= link_to "全レシピ", root_path %></li>
-            <li class="dropdown-item"><%= link_to "指定無し", root_path(genre: "inbisible") %></li>
-            <li class="dropdown-item"><%= link_to "前菜/温菜", root_path(genre: "appetizer") %></li>
-            <li class="dropdown-item"><%= link_to "メイン/パスタなど", root_path(genre: "main") %></li>
-            <li class="dropdown-item"><%= link_to "デザート", root_path(genre: "dessert") %></li>
-            <li class="dropdown-item"><%= link_to "ドリンク", root_path(genre: "drink") %></li>
-            <li class="dropdown-item" href="#">Another action</li>
-            <li class="dropdown-item" href="#">Something else here</li>
+            <%= link_to root_path do%><li class="dropdown-item">全レシピ</li><% end %>
+            <%= link_to root_path(genre: "invisible") do%><li class="dropdown-item">&nbsp;分類未設定</li><% end %>
+            <%= link_to root_path(genre: "appetizer") do%><li class="dropdown-item">&nbsp;前菜/温菜</li><% end %>
+            <%= link_to root_path(genre: "main") do%><li class="dropdown-item">&nbsp;メイン/パスタなど</li><% end %>
+            <%= link_to root_path(genre: "dessert") do%><li class="dropdown-item">&nbsp;デザート</li><% end %>
+            <%= link_to root_path(genre: "drink") do%><li class="dropdown-item">&nbsp;ドリンク</li><% end %>
           </ul>
         </li>
 

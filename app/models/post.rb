@@ -25,7 +25,7 @@ class Post < ApplicationRecord
     when "dessert"
       where(genre: :dessert).order(id: :DESC)
     when "drink"
-      where(genre: :drink).order(id:DESC)
+      where(genre: :drink).order(id: :DESC)
     end
   end
 end
