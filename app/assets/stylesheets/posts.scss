@@ -76,10 +76,45 @@ textarea {
   justify-content: center;
   padding: 10px;
 }
-.show-like-btn {
-  align-items: center;
-  height: 40px;
-  align-content: center;
+
+.show-btn {
+  margin: 0 10px 0 20px;
+  text-align: center;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: olivedrab;
+  border-left: solid 8px darkgreen;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.show-btn:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+.show-btn:hover {
+  color: palegoldenrod
+}
+
+.like-btn {
+  margin: 0 20px 0 10px;
+  text-align: center;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: firebrick;
+  border-left: solid 8px #ff7c5c;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.like-btn:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+.like-btn:hover {
+  color: palegoldenrod;
 }
 
 .caption {
@@ -129,4 +164,15 @@ textarea {
 
 nav ul{
   justify-content: center;
+}
+
+.btn-postupdate {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  color: #FFF;
+  background: peru;
+  border-radius: 4px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  border: solid 2px brown;
 }
