@@ -46,7 +46,7 @@ ja:
       locked: アカウントはロックされています。
       not_found_in_database: "%{authentication_keys}またはパスワードが違います。"
       timeout: セッションがタイムアウトしました。もう一度ログインしてください。
-      unauthenticated: ログインもしくはアカウント登録してください。
+      unauthenticated: ログインもしくはアカウント登録してください
       unconfirmed: メールアドレスの本人確認が必要です。
     mailer:
       confirmation_instructions:
@@ -119,8 +119,10 @@ ja:
       already_signed_out: 既にログアウト済みです。
       new:
         sign_in: ログイン
-      signed_in: ログインしました。
-      signed_out: ログアウトしました。
+        sign_up: アカウント登録
+        guest_sign_in: ゲストログイン（閲覧用）
+      signed_in: ログインしました
+      signed_out: ログアウトしました
     shared:
       links:
         back: 戻る

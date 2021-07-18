@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     current_user.posts.create!(post_params)
-    redirect_to posts_path
+    redirect_to posts_path, notice: "レシピを投稿しました"
   end
 
   def show

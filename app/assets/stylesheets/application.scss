@@ -39,13 +39,25 @@
   max-width: 1200px;
 }
 
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
+
 body {
   padding-top: 100px;
   background-color: ivory
 }
 
+.flash-msg {
+  margin-bottom: 0;
+}
+
 .navbar-brand {
-  padding: 0px;
+  // padding: 0px;
   height: 100px;
 }
 
