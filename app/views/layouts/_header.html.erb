@@ -33,6 +33,7 @@
         <li class="nav-item active h5">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav-link active" %>
         </li>
+        
       <% else %>
         <li class="nav-item active h5">
           <%= link_to "新規ユーザー登録", new_user_registration_path, class: "nav-link active text-success" %>
