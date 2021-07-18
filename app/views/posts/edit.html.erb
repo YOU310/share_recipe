@@ -1,4 +1,4 @@
-<h3>新規投稿</h3>
+<h3>レシピ編集</h3>
 
 <%= form_with model: @post, local: true do |f| %>
 <div class="newpost-area mx-auto">
@@ -33,7 +33,7 @@
   </div>
 
 <div>
-  <%= f.submit t(".post"), class: 'btn btn-primary w-100' %>
+  <%= f.submit t(".update"), class: 'btn btn-primary w-100' %>
 </div>
 
 </div>

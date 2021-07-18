@@ -4,7 +4,7 @@
     <p class="mt-0 mb-0 recipe-title"><%= @post.title %></p>
   </div>
   <div class="col-md-3 show-like-btn-area">
-    <a href="#" class="btn btn-primary show-like-btn text-nowrap">お気に入り登録</a>
+    <a href="#" class="btn btn-primary show-like-btn text-nowrap w-100">お気に入り登録</a>
   </div>
 
   <div class="show-top-left col-md-6">
@@ -30,6 +30,7 @@
     <span class="caption">作り方動画：</span>
     <p><%= @post.video %></p>
   </div>
+  <%= link_to t(".update"), edit_post_path, class: "btn" %>
 </div>
 <hr>
 <p>
