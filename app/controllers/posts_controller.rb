@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: %i[edit update]
   PER_PAGE = 12
 
   def index
@@ -19,7 +20,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    Post.find(params[:id]).update!(post_params)
+    @post.update!(post_params)
     redirect_to posts_path, notice: "レシピを更新しました"
   end
 
@@ -31,5 +32,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :material, :recipe, :video, :image, :genre)
+  end
+
+  def set_post
+    @post = current_user.posts.find_by(id: params[:id])
+    redirect_to root_path, alert: "権限がありません" if @post.nil?
   end
 end

@@ -1,40 +1,44 @@
 <h3>レシピ編集</h3>
 
 <%= form_with model: @post, local: true do |f| %>
-<div class="newpost-area mx-auto">
-  <div>
-    <div class="newpost-col"><%= f.label :title %></div>
-    <p><%= f.text_field :title, class:"w-100" %></p>
+  <div class="newpost-area mx-auto">
+    <div>
+      <div class="newpost-col"><%= f.label :title %></div>
+      <p><%= f.text_field :title, class:"w-100" %></p>
+    </div>
+
+    <div>
+      <div class="newpost-col"><%= f.label :genre %></div>
+      <p><%= f.select :genre, Post.genres_i18n.invert %></p>
+    </div>
+
+    <div>
+      <div class="newpost-col"><%= f.label :material %></div>
+      <p><%= f.text_area :material, class: "w-100" %></p>
+    </div>
+
+    <div>
+      <div class="newpost-col"><%= f.label :recipe %><div>
+      <p><%= f.text_area :recipe, class: "w-100" %><div>
+    </div>
+
+    <div>
+      <div class="newpost-col"><%= f.label :image %></div>
+      <p><%= f.file_field :image, :accept => "image/*" %></p>
+    </div>
+
+    <div>
+      <div class="newpost-col"><%= f.label :video %></div>
+      <p><%= f.file_field :video, :accept => "video/*" %></p>
+    </div>
+
+    <div>
+      <%= f.submit t(".update"), class: 'btn-postupdate w-100' %>
+    </div>
+      
   </div>
-
-  <div>
-    <div class="newpost-col"><%= f.label :genre %></div>
-    <p><%= f.select :genre, Post.genres_i18n.invert %></p>
-  </div>
-
-  <div>
-    <div class="newpost-col"><%= f.label :material %></div>
-    <p><%= f.text_area :material, class: "w-100" %></p>
-  </div>
-
-  <div>
-    <div class="newpost-col"><%= f.label :recipe %><div>
-    <p><%= f.text_area :recipe, class: "w-100" %><div>
-  </div>
-
-  <div>
-    <div class="newpost-col"><%= f.label :image %></div>
-    <p><%= f.file_field :image, :accept => "image/*" %></p>
-  </div>
-
-  <div>
-    <div class="newpost-col"><%= f.label :video %></div>
-    <p><%= f.file_field :video, :accept => "video/*" %></p>
-  </div>
-
-<div>
-  <%= f.submit t(".update"), class: 'btn-postupdate w-100' %>
-</div>
-
-</div>
 <% end %>
+
+<div class="cansel-btn-area">
+  <%= link_to("キャンセル", "/posts/#{@post.id}", class: "cansel-btn text-nowrap w-100")%>
+</div>
