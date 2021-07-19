@@ -46,12 +46,6 @@ textarea {
 .card-text {
   padding: 0 15px;
 }
-.btn-area {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: auto 0 15px 0;
-}
 
 .recipe-btn {
   width: 45%;
@@ -76,8 +70,21 @@ textarea {
   justify-content: center;
   padding: 10px;
 }
+.btn-area {
+  width: 100%;
+  display: flex;
+  // justify-content: center;
+  margin: auto 0 15px 0;
+}
 
+.show-btn-area {
+  display: flex;
+  width: 50%;
+}
 .show-btn {
+  // display: flex;
+  // width: 50%;
+  // padding: 0 15px 0 30px;
   margin: 0 10px 0 20px;
   text-align: center;
   display: inline-block;
@@ -97,7 +104,14 @@ textarea {
   color: palegoldenrod
 }
 
+.like-btn-area {
+  display: flex;
+  width: 50%;
+}
 .like-btn {
+  // display: flex;
+  // width: 50%;
+  // padding: 0 30px 0 15px;
   margin: 0 20px 0 10px;
   text-align: center;
   display: inline-block;
@@ -114,6 +128,25 @@ textarea {
   transform: translateY(2px);
 }
 .like-btn:hover {
+  color: palegoldenrod;
+}
+
+.edit-btn {
+  margin: 0 20px 20px 20px;
+  text-align: center;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: olivedrab;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.edit-btn:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+.edit-btn:hover {
   color: palegoldenrod;
 }
 
@@ -167,12 +200,16 @@ nav ul{
 }
 
 .btn-postupdate {
-  position: relative;
-  display: inline-block;
-  padding: 0.25em 0.5em;
   color: #FFF;
   background: peru;
   border-radius: 4px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
   border: solid 2px brown;
+}
+.btn-postupdate:hover {
+  color: blanchedalmond;
+}
+
+.btn-edit {
+
 }

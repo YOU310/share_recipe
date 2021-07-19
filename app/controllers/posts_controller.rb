@@ -20,6 +20,7 @@ class PostsController < ApplicationController
 
   def update
     Post.find(params[:id]).update!(post_params)
+    redirect_to posts_path, notice: "レシピを更新しました"
   end
 
   def show

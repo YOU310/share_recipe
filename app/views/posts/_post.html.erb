@@ -9,9 +9,12 @@
       <p class="card-text">投稿者：<%= post.user.name %></p>
       <p class="card-text">分類：<%= post.genre_i18n %></p>
       <div class="btn-area">
+      <div class="show-btn-area">
         <%= link_to("詳細", "/posts/#{post.id}", class: "show-btn text-nowrap w-100")%>
-        <%= link_to("お気に入り登録", "/posts/#{post.id}", class: "like-btn text-nowrap w-100")%>
-        <%# <a href="#" class="like-btn text-nowrap">お気に入り登録</a> %>
+      </div>
+      <div class="like-btn-area">
+        <%= link_to("お気に入り", "/posts/#{post.id}", class: "like-btn text-nowrap w-100")%>
+      </div>
       </div>
     </div>
   </div>
