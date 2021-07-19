@@ -11,31 +11,35 @@
     <img src="<%= @post.image_url %>" class="show-img">
   </div>
   <div class="show-head-right col-md-6">
-    <div>
+    <div class="caption-area">
       <span class="caption">分類：</span><span><%= @post.genre_i18n %></span>
     </div>
-    <div>
+    <div class="caption-area">
       <span class="caption">投稿者：</span><span><%= @post.user.name %></span>
-    </div>
-    <div class="material">
-      <span class="caption">使用する材料：</span>
+    </div class="caption-area">
+    <div class="caption-area">
+      <p class="caption">使用する材料：</p>
       <div class="show-content"><%= simple_format(@post.material) %></div>
     </div>
   </div>
-  <div class="show-recipe col-12">
-    <span class="caption">作り方：</span>
+  <div class="caption-area show-recipe col-12">
+    <p class="caption">作り方：</p>
     <div class="show-content"><%= simple_format(@post.recipe) %></div>
   </div>
-  <div class="show-video col-12">
-    <span class="caption">作り方動画：</span>
-    <p><%= @post.video %></p>
-  </div>
+
+  <% if @post.video? %>
+    <div class="col-12">
+      <p class="caption">作り方動画：</p>
+      <div class="video-area"><%= video_tag @post.video_url, height: 400, width: 300, :controls => true, class: "video" %></div>
+    </div>
+  <% end %>
+
   <% if current_user.id == @post.user_id %>
     <%= link_to t(".update"), edit_post_path, class: "edit-btn w-100" %>
   <% end %>
 </div>
 <hr>
 <p>
-<%= link_to "この記事にコメントする", new_post_comment_path(@post) %>
-<%= link_to  "投稿されたコメントを見る", post_comments_path(@post) %>
+  <%= link_to "この記事にコメントする", new_post_comment_path(@post) %>
+  <%= link_to  "投稿されたコメントを見る", post_comments_path(@post) %>
 </p>

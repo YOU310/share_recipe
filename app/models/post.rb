@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   mount_uploader :image, RecipeImageUploader
+  mount_uploader :video, VideoUploader
 
   enum genre: {
     invisible: 0,
