@@ -7,14 +7,15 @@
     <a href="#" class="like-btn w-100">お気に入り登録</a>
   </div>
 
-  <div class="show-top-left col-md-6">
+  <div class="show-top-left col-md-6 px-0">
     <% if @post.image? %>
       <img src="<%= @post.image_url %>" class="show-img">
     <% else %>
       <img src="/assets/images/default.png" class="show-img">
+      <p class="img-text">画像は未設定です</p>
     <% end %>
   </div>
-  <div class="show-head-right col-md-6">
+  <div class="show-head-right col-md-5">
     <div class="caption-area">
       <span class="caption">分類：</span><span><%= @post.genre_i18n %></span>
     </div>
@@ -31,12 +32,19 @@
     <div class="show-content"><%= simple_format(@post.recipe) %></div>
   </div>
 
-  <% if @post.video? %>
     <div class="col-12">
       <p class="caption">作り方動画：</p>
-      <div class="video-area"><%= video_tag @post.video_url, height: 400, width: 300, :controls => true, class: "video" %></div>
+      
+        <div class="video-area mx-auto">
+          <% if @post.video? %>
+            <%= video_tag @post.video_url, :controls => true, class: "video" %>
+          <% else %>
+            <img src="/assets/images/default.png" class="video">
+            <p class="img-text">画像は未設定です</p>
+          <% end %>
+        </div>
+      
     </div>
-  <% end %>
 
   <% if current_user.id == @post.user_id %>
     <%= link_to t(".update"), edit_post_path, class: "edit-btn w-100" %>

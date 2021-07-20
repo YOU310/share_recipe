@@ -3,7 +3,10 @@
     <% if post.image? %>
       <img src="<%= post.image_url %>" class="card-img-top img">
     <% else %>
+    <div class="img-area">
       <img src="/assets/images/default.png" class="card-img-top img">
+      <p class="img-text">画像は未設定です</p>
+    </div>
     <% end %>
 
     <div class="card-bot">
