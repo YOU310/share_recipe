@@ -2,6 +2,8 @@
   <div class="card mx-auto">
     <% if post.image? %>
       <img src="<%= post.image_url %>" class="card-img-top img">
+    <% else %>
+      <img src="/assets/images/default.png" class="card-img-top img">
     <% end %>
 
     <div class="card-bot">

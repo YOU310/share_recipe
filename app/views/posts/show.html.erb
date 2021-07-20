@@ -8,7 +8,11 @@
   </div>
 
   <div class="show-top-left col-md-6">
-    <img src="<%= @post.image_url %>" class="show-img">
+    <% if @post.image? %>
+      <img src="<%= @post.image_url %>" class="show-img">
+    <% else %>
+      <img src="/assets/images/default.png" class="show-img">
+    <% end %>
   </div>
   <div class="show-head-right col-md-6">
     <div class="caption-area">
