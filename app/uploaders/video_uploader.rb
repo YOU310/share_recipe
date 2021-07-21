@@ -20,11 +20,11 @@ class VideoUploader < CarrierWave::Uploader::Base
     "/images/fallback/#{[version_name, 'default.png'].compact.join('_')}"
   end
 
-  process convert: "mp4"
+  # process convert: "mp4"
 
-  def filename
-    "#{super.chomp(File.extname(super))}.mp4" if original_filename.present?
-  end
+  # def filename
+  #   "#{super.chomp(File.extname(super))}.mp4" if original_filename.present?
+  # end
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
