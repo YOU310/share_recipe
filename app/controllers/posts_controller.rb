@@ -12,8 +12,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    current_user.posts.create!(post_params)
-    redirect_to posts_path, notice: "レシピを投稿しました"
+    @post = current_user.posts.new(post_params)
+    if @post.save
+      redirect_to @post, notice: "レシピを投稿しました"
+    else
+      flash.now[:alert] = "投稿に失敗しました"
+      render :new
+    end
   end
 
   def edit
@@ -21,8 +26,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update!(post_params)
-    redirect_to posts_path, notice: "レシピを更新しました"
+    if @post.update(post_params)
+      redirect_to @post, notice: "更新しました"
+    else
+      flash.now[:alert] = "更新に失敗しました"
+      render :edit
+    end
   end
 
   def show
