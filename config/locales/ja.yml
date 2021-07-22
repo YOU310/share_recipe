@@ -14,7 +14,6 @@ ja:
       user: ユーザー
       post: レシピ投稿
       comment: レシピコメント
-
     attributes:
       post:
         user: 作成店舗
@@ -23,7 +22,7 @@ ja:
         title: 商品名
         material: 材料
         recipe: 作り方
-        comments: コメント
+        omments: コメント
         genre: ジャンル
       comment:
         user: 投稿主
@@ -36,6 +35,8 @@ ja:
     new:
       post: 投稿する
     edit:
+      image: 画像（変更する場合は選択してください）
+      video: 動画（変更する場合は選択してください）
       update: 更新
     show:
       update: レシピ編集
