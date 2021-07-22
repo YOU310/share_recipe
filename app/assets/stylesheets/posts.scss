@@ -55,7 +55,11 @@ textarea {
   background: rgba(0,0,0,.5);
   text-shadow: 1px 1px 0 #000, -1px -1px 0 #000,
               -1px 1px 0 #000, 1px -1px 0 #000;
-               
+}
+
+.video-text {
+  width: 100%;
+  max-width: 500px;
 }
 
 .card-bot {
@@ -84,6 +88,7 @@ textarea {
 }
 
 .video-area {
+  position: relative;
   display: flex;
   // min-width: 300px;
   max-width: 500px;
@@ -91,7 +96,12 @@ textarea {
   justify-content: center;
 }
 .video {
+  // width: 100%;
+}
+.video-img {
   width: 100%;
+  height: 500px;
+  object-fit: cover;
 }
 
 .show-like-btn-area {
