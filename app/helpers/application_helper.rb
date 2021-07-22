@@ -1,6 +1,6 @@
 module ApplicationHelper
   def max_width
-    if controller_name == "posts" && action_name == "show" || action_name == "new" || action_name == "edit"
+    if controller_name == "posts" && action_name != "index"
       "mw-md"
     elsif devise_controller?
       "mw-sm"

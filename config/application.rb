@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative "boot"
 
 require "rails"
@@ -28,6 +26,7 @@ module ShareRecipes
 
     config.i18n.default_locale = :ja
     config.time_zone = "Asia/Tokyo"
+    config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag }
 
     # Configuration for the application, engines, and railties goes here.
     #
