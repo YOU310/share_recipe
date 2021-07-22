@@ -6,5 +6,4 @@ class Comment < ApplicationRecord
     validates :title
     validates :content
   end
-
 end
