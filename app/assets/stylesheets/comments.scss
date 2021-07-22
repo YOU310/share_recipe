@@ -1,3 +1,28 @@
-// Place all the styles related to the comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.card-comment {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 250px;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  height: auto;
+  margin-bottom: 10px;
+  color: black;
+}
+.card-comment:hover {
+  text-decoration: none;
+  color: darkblue;
+}
+
+.comment-index-btn-left {
+  margin: 0 auto;
+  width: 40%;
+}
+.comment-index-btn-right {
+  margin: 0 auto;
+  width: 40%;
+}

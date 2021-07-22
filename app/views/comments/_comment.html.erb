@@ -1,0 +1,12 @@
+<div class="row">
+  <%= link_to(post_comment_path(comment.post.id, comment.id), class: "card-comment") do %>
+  <%# <div class="card-comment mx-auto"> %>
+    <div class="card-body">
+      <p class="card-text">From：<%= comment.user.name %></p>
+      <p class="card-text">タイトル：<%= comment.title %></p>
+      <p class="card-text">投稿日時：</p>
+    </div>
+  <%# </div> %>
+  <% end %>
+</div>
+
