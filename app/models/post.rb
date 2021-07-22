@@ -2,6 +2,13 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
 
+  with_options presence: true do
+    validates :title
+    validates :material
+    validates :recipe
+    validates :genre
+  end
+
   mount_uploader :image, RecipeImageUploader
   mount_uploader :video, VideoUploader
 
