@@ -33,6 +33,8 @@ ja:
 
   posts:
     new:
+      image: 画像
+      video: 動画
       post: 投稿する
     edit:
       image: 画像（変更する場合は選択してください）
