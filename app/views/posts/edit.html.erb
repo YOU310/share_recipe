@@ -23,12 +23,12 @@
     </div>
 
     <div>
-      <div class="newpost-col"><%= f.label :image %>（変更する場合は選択してください）</div>
+      <div class="newpost-col"><%= t(".image") %></div>
       <p><%= f.file_field :image, :accept => "image/*" %></p>
     </div>
 
     <div>
-      <div class="newpost-col"><%= f.label :video %>（変更する場合は選択してください）</div>
+      <div class="newpost-col"><%= t(".video") %></div>
       <p><%= f.file_field :video, :accept => "video/*" %></p>
     </div>
 
