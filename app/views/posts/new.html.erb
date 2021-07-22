@@ -23,12 +23,12 @@
     </div>
 
     <div>
-      <div class="newpost-col"><%= f.label :image %></div>
+      <div class="newpost-col"><%= t(".image") %></div>
       <p><%= f.file_field :image, :accept => "image/*" %></p>
     </div>
 
     <div>
-      <div class="newpost-col"><%= f.label :video %></div>
+      <div class="newpost-col"><%= t(".video") %></div>
       <p><%= f.file_field :video, :accept => "video/*" %></p>
     </div>
 
@@ -36,5 +36,4 @@
     <%= f.submit t(".post"), class: 'btn-postupdate w-100' %>
   </div>
 
-</div>
 <% end %>
