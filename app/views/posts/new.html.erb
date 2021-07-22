@@ -1,5 +1,7 @@
 <h3>新規投稿</h3>
 
+<%= render "layouts/error_messages" %>
+
 <%= form_with model: @post, local: true do |f| %>
   <div class="newpost-area mx-auto">
     <div>
