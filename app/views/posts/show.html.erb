@@ -50,7 +50,7 @@
   <% end %>
 </div>
 <hr>
-<p>
-  <%= link_to "この記事にコメントする", new_post_comment_path(@post) %>
-  <%= link_to  "投稿されたコメントを見る", post_comments_path(@post) %>
-</p>
+<div class="d-flex justify-content-center">
+  <%= link_to "この記事にコメントする", new_post_comment_path(@post), class:"btn comment-index-btn-left btn-success" %>
+  <%= link_to "投稿されたコメントを見る", post_comments_path(@post), class:"btn comment-index-btn-right btn-info" %>
+</div>
