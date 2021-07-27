@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-flex col-lg-7">
+      <div class="row">
+        <div class="d-flex align-items-center col-sm-5">
+          <a class="logo_link" href="#">
+            <%= image_tag("logo.png", size: "100x100") %>
+          </a>
+          <div class="text-center">
+            <p class="app-sub mb-0">レシピ共有アプリ</p>
+            <p class="app-name mb-0">Resiper</p>
+          </div>
+        </div>
+
+        <form class="search-area form-inline my-2 my-lg-0 col-sm-7">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center col-lg-5">
+      <div class="w-100 col-sm-6 p-0 mr-1">
+        <%= link_to "＠新規投稿", new_post_path, class:"btn btn-primary btn-logo-new text-white w-100" %>
+      </div>
+
+      <div class="w-100 col-sm-6 p-0 ml-1">
+        <%= link_to "＠お気に入り", new_post_path, class:"btn btn-success btn-logo-like text-white w-100" %>
+      </div>
+    </div>
+  </div>
+</div>
