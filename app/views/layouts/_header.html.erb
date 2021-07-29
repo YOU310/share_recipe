@@ -7,7 +7,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle h6 text-danger" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             レシピ一覧
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -19,31 +19,46 @@
             <%= link_to root_path(genre: "drink") do%><li class="dropdown-item">&nbsp;ドリンク</li><% end %>
           </ul>
         </li>
-        <%# <li class="nav-item active h5">
-          <%= link_to "新規投稿", new_post_path, class: "nav-link active text-danger" %>
-        <%# </li> %>
 
-        <li class="nav-item active h6">
+        <li class="nav-item active">
           <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-link active text-success" %>
         </li>
 
-        <li class="nav-item active h6">
+        <li class="nav-item active">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav-link active" %>
         </li>
 
       <% else %>
-        <li class="nav-item active h5">
+        <li class="nav-item active">
           <%= link_to "新規ユーザー登録", new_user_registration_path, class: "nav-link active text-success" %>
         </li>
-        <li class="nav-item active h5">
+        <li class="nav-item active">
           <%= link_to "ログイン", new_user_session_path, class: "nav-link active" %>
         </li>
-        <li class="nav-item active h5">
+        <li class="nav-item active">
           <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "nav-link active text-primary" %>
         </li>
       <% end %>
     </ul>
-    
-    
   </div>
+
+  <ul class="navbar-nav">
+    <% if request.path.include?("sign_") %>
+      <li>
+        <a>ようこそReciperへ</a>
+      </li>
+    <% elsif current_user.email == "guest@example.com" %>
+      <li>
+        <a>ようこそゲストさん</a>
+      </li>
+    <% elsif current_user.name? %>
+      <li class="nav-item">
+        <a>ようこそ<%= current_user.name %>さん</a>
+      </li>
+    <% else current_user.email? %>
+      <li>
+        <a>ログイン中のE-mail:<%= current_user.email %></a>
+      </li>
+    <% end %>
+    </ul>
 </nav>
