@@ -1,7 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-white navbar-light border border-danger pt-0 pb-0 pl-0 fixed-top">
-  <a class="navbar-brand" href="#">
-    <%= image_tag("logo.png", size: "100x100")%>
-  </a>
+<nav class="navbar navbar-expand-sm bg-white navbar-light pt-0 pb-0 pl-0 fixed-top text-right">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,7 +7,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle h5 text-danger" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             レシピ一覧
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -22,34 +19,46 @@
             <%= link_to root_path(genre: "drink") do%><li class="dropdown-item">&nbsp;ドリンク</li><% end %>
           </ul>
         </li>
-        <li class="nav-item active h5">
-          <%= link_to "新規投稿", new_post_path, class: "nav-link active text-danger" %>
-        </li>
 
-        <li class="nav-item active h5">
+        <li class="nav-item active">
           <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-link active text-success" %>
         </li>
 
-        <li class="nav-item active h5">
+        <li class="nav-item active">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav-link active" %>
         </li>
 
       <% else %>
-        <li class="nav-item active h5">
+        <li class="nav-item active">
           <%= link_to "新規ユーザー登録", new_user_registration_path, class: "nav-link active text-success" %>
         </li>
-        <li class="nav-item active h5">
+        <li class="nav-item active">
           <%= link_to "ログイン", new_user_session_path, class: "nav-link active" %>
         </li>
-        <li class="nav-item active h5">
+        <li class="nav-item active">
           <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "nav-link active text-primary" %>
         </li>
       <% end %>
     </ul>
-    
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
+
+  <ul class="navbar-nav">
+    <% if request.path.include?("sign_") %>
+      <li>
+        <a>ようこそReciperへ</a>
+      </li>
+    <% elsif current_user.email == "guest@example.com" %>
+      <li>
+        <a>ようこそゲストさん</a>
+      </li>
+    <% elsif current_user.name? %>
+      <li class="nav-item">
+        <a>ようこそ<%= current_user.name %>さん</a>
+      </li>
+    <% else current_user.email? %>
+      <li>
+        <a>ログイン中のE-mail:<%= current_user.email %></a>
+      </li>
+    <% end %>
+    </ul>
 </nav>
