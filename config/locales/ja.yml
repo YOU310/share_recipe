@@ -42,5 +42,8 @@ ja:
       update: 更新
     show:
       update: レシピ編集
+  comments:
+    new:
+      post: 投稿する
 
 
