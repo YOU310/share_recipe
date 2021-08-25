@@ -1,4 +1,4 @@
-<h3>レシピ詳細</h3>
+<h4>レシピ詳細</h4>
 <div class="recipe-base mx-auto row">
   <div class="recipe-title-area col-md-8">
     <p class="mt-0 mb-0 recipe-title"><%= @post.title %></p>
@@ -46,11 +46,11 @@
     </div>
 
   <% if current_user.id == @post.user_id %>
-    <%= link_to t(".update"), edit_post_path, class: "edit-btn w-100" %>
+    <%= link_to t(".update"), edit_post_path, class: "btn-edit w-100" %>
   <% end %>
 </div>
 <hr>
 <div class="d-flex justify-content-center">
-  <%= link_to "この記事にコメントする", new_post_comment_path(@post), class:"btn comment-index-btn-left btn-success" %>
-  <%= link_to "投稿されたコメントを見る", post_comments_path(@post), class:"btn comment-index-btn-right btn-info" %>
+  <%= link_to "コメントする", new_post_comment_path(@post), class:"comment-index-btn-left btn-back" %>
+  <%= link_to "コメント一覧へ", post_comments_path(@post), class:"comment-index-btn-right btn-back" %>
 </div>

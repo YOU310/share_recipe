@@ -61,3 +61,8 @@ body {
 .nav-item {
   font-family: sans-serif;
 }
+
+.navbar-top {
+  border-bottom: solid 1px lightgrey;
+  z-index: 20;
+}

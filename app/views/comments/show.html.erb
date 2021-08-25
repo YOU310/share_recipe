@@ -1,12 +1,15 @@
-<h1>コメント詳細</h1>
+<h4>コメント詳細</h4>
+
+<div class="show-comment-area mx-auto p-3">
   <% if @comment.title.present? %>
     <p>タイトル：<%= @comment.title %></p>
   <% else %>
     <p>タイトル：無題</p>
   <% end %>
   <p>From：<%= @comment.user.name %></p>
-  <p><%= @comment.content %></p>
+  <p><%= simple_format(@comment.content) %></p>
   <p><%= @comment.image %></p>
+</div>
   <hr>
 
-<%= link_to "戻る", post_comment_path %>
+<%= link_to "一覧へ戻る", post_comments_path, class:"w-100 btn-back" %>
