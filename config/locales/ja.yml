@@ -37,10 +37,13 @@ ja:
       video: 動画
       post: 投稿する
     edit:
-      image: 画像（変更する場合は選択してください）
-      video: 動画（変更する場合は選択してください）
+      image: 画像（変更する場合のみ選択）
+      video: 動画（変更する場合のみ選択）
       update: 更新
     show:
       update: レシピ編集
+  comments:
+    new:
+      post: 投稿する
 
 

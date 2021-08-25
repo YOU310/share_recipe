@@ -1,4 +1,4 @@
-h3 {
+h4 {
   padding: 10px 0;
   text-align: center;
 }
@@ -235,16 +235,22 @@ nav ul{
   justify-content: center;
 }
 
-.btn-postupdate {
+.btn-post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
   margin-top: 10px;
-  color: #FFF;
-  background: peru;
+  color: orangered;
+  background-color: mistyrose;
   border-radius: 4px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
-  border: solid 2px brown;
+  border: solid 1px;
+  transition: 0.3s;
 }
-.btn-postupdate:hover {
-  color: blanchedalmond;
+.btn-post:hover {
+  background: tomato;
+  color: #FFF;
 }
 
 .cansel-btn-area {
@@ -266,4 +272,24 @@ nav ul{
 .cansel-btn:hover {
   text-decoration: none;
   color: blanchedalmond;
+}
+
+.btn-edit  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  margin: 10px;
+  margin-top: 10px;
+  color: white;
+  background-color: rgb(76, 168, 76);
+  border-radius: 4px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  border: solid 1px rgb(6, 151, 6);
+  transition: 0.3s;
+}
+.btn-edit:hover {
+  background: rgb(4, 148, 4);
+  color: #FFF;
+  text-decoration: none;
 }

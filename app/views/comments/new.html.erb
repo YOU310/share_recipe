@@ -1,7 +1,30 @@
-<h1>新規コメント投稿</h1>
-<%= form_with model: [@post, @comment] do |f| %>
-  <p>タイトル<%= f.text_field :title %></p>
-  <p>本文<%= f.text_field :content %></p>
-  <p>イメージ画像<%= f.file_field :image %></p>
-  <%= f.submit "投稿" %>
+<h4>新規コメント投稿</h4>
+
+<%# <%= render "layouts/error_messages_comment" %>
+
+<%= form_with model: [@post, @comment], local: true do |f| %>
+  <div class="newpost-area mx-auto">
+    <div>
+      <div class="newpost-col"><%= f.label :title %></div>
+      <p><%= f.text_field :title, class:"w-100" %></p>
+    </div>
+    <div>
+      <div class="newpost-col"><%= f.label :content %></div>
+      <p><%= f.text_area :content, class:"w-100" %></p>
+    </div>
+    <div>
+      <div class="newpost-col"><%= f.label :image %></div>
+      <p><%= f.file_field :image, class: "w-100" %></p>
+    </div>
+    <div>
+      <%= f.submit t(".post"), class: 'btn-post w-100' %>
+    </div>
+  </div>
 <% end %>
+
+<hr>
+
+<div class="comment-btn-area d-flex justify-content-center mx-auto">
+  <%= link_to "レシピ詳細へ", "/posts/#{@post.id}", class:"w-100 mx-1 btn-back" %>
+  <%= link_to "コメント一覧へ", post_comments_path(@post), class:"w-100 mx-1 btn-back" %>
+</div>
