@@ -14,6 +14,7 @@ ja:
       user: ユーザー
       post: レシピ投稿
       comment: レシピコメント
+      like: お気に入り
     attributes:
       post:
         user: 作成店舗
@@ -30,6 +31,9 @@ ja:
         content: コメント文
         image: 画像
         title: タイトル
+      like:
+        user: ユーザー
+        post: 投稿
 
   posts:
     new:

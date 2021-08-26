@@ -3,8 +3,13 @@
   <div class="recipe-title-area col-md-8">
     <p class="mt-0 mb-0 recipe-title"><%= @post.title %></p>
   </div>
-  <div class="col-md-4 show-like-btn-area">
-    <a href="#" class="like-btn w-100">お気に入り登録</a>
+  <div class="col-md-4">
+        <% if @post.liked_by?(current_user) %>
+          ★
+        <% else %>
+          ☆
+        <% end %>
+    <%# <a href="#" class="like-btn w-100">お気に入り登録</a> %>
   </div>
 
   <div class="show-top-left col-md-6 px-0">
