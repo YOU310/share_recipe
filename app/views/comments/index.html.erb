@@ -1,18 +1,15 @@
-
-
 <div class="comments-bar">
+  <%= paginate @comments %>
 
-<%= paginate @comments %>
-
-<div class="d-flex justify-content-center comment-btn-area mx-auto">
-  <%= link_to "コメントする", new_post_comment_path(@post), class:"comment-index-btn-left btn-back" %>
-  <%= link_to "レシピ詳細へ", "/posts/#{@post.id}", class:"comment-index-btn-right btn-back" %>
-</div>
+  <div class="d-flex justify-content-center comment-btn-area mx-auto">
+    <%= link_to "コメントする", new_post_comment_path(@post), class:"comment-index-btn-left btn-back" %>
+    <%= link_to "レシピ詳細へ", "/posts/#{@post.id}", class:"comment-index-btn-right btn-back" %>
+  </div>
 </div>
 
 <div class="comments-container">
-<h4>コメント一覧</h4>
-<div class="container align-items-center w-75">
-  <%= render partial: "comment", collection: @comments %>
-</div>
+  <h4>コメント一覧</h4>
+  <div class="container align-items-center w-75">
+    <%= render partial: "comment", collection: @comments %>
+  </div>
 </div>
