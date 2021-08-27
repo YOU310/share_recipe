@@ -18,7 +18,7 @@
         <div class="show-btn-area">
           <%= link_to("詳細", "/posts/#{post.id}", class: "show-btn text-nowrap w-100")%>
         </div>
-        <div class="like-btn-area">
+        <div class="like-btn-area" id="post-<%= post.id %>">
           <% if post.liked_by?(current_user) %>
             <%= render "like", post: post %>
           <% else %>

@@ -3,7 +3,7 @@
   <div class="recipe-title-area col-md-8">
     <p class="mt-0 mb-0 recipe-title"><%= @post.title %></p>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4" id="post-<%= @post.id %>">
         <% if @post.liked_by?(current_user) %>
           <%= render "like", post: @post %>
         <% else %>
