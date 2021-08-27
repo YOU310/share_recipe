@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   PER_PAGE = 12
 
   def index
-    @q = Post.ransack(params[:q])
+    @q = Post.includes(:user, :likes).ransack(params[:q])
     @posts = @q.result.genre_classification(params[:genre]).page(params[:page]).per(PER_PAGE)
   end
 
