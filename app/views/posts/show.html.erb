@@ -1,15 +1,15 @@
 <h4>レシピ詳細</h4>
+</div class="w-100 mx-auto">
 <div class="recipe-base mx-auto row">
   <div class="recipe-title-area col-md-8">
     <p class="mt-0 mb-0 recipe-title"><%= @post.title %></p>
   </div>
-  <div class="col-md-4" id="post-<%= @post.id %>">
-        <% if @post.liked_by?(current_user) %>
-          <%= render "like", post: @post %>
-        <% else %>
-          <%= render "dislike", post: @post %>
-        <% end %>
-    <%# <a href="#" class="like-btn w-100">お気に入り登録</a> %>
+  <div class="col-md-4 like-btn-show" id="post-<%= @post.id %>">
+    <% if @post.liked_by?(current_user) %>
+      <%= render "like", post: @post %>
+    <% else %>
+      <%= render "dislike", post: @post %>
+    <% end %>
   </div>
 
   <div class="show-top-left col-md-6 px-0">
@@ -53,6 +53,7 @@
   <% if current_user.id == @post.user_id %>
     <%= link_to t(".update"), edit_post_path, class: "btn-edit w-100" %>
   <% end %>
+</div>
 </div>
 <hr>
 <div class="d-flex justify-content-center">
