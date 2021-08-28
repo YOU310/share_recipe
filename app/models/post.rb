@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   with_options presence: true do
     validates :title
@@ -35,5 +36,9 @@ class Post < ApplicationRecord
     when "drink"
       where(genre: :drink).order(id: :DESC)
     end
+  end
+
+  def liked_by?(user)
+    likes.any? { |like| like.user_id == user.id }
   end
 end

@@ -12,7 +12,11 @@ Rails.application.routes.draw do
     post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
   end
 
+  # resources :posts do
+  # end
+
   resources :posts do
     resources :comments
+    resource :likes, only: %i[create destroy]
   end
 end

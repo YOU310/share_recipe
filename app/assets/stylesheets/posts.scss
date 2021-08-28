@@ -79,7 +79,7 @@ textarea {
 
 .recipe-base {
   width: 90%;
-  min-width: 300px;
+  min-width: 280px;
   max-width: 800px;
   background-color: white;
   border: 1px solid;
@@ -90,10 +90,12 @@ textarea {
 .video-area {
   position: relative;
   display: flex;
-  min-width: 300px;
-  max-width: 500px;
   height: 500px;
   justify-content: center;
+}
+
+.video {
+  width: 100%;
 }
 
 .video-img {
@@ -111,25 +113,20 @@ textarea {
 .btn-area {
   width: 100%;
   display: flex;
-  // justify-content: center;
+  justify-content: space-evenly;
   margin: auto 0 15px 0;
 }
 
 .show-btn-area {
-  display: flex;
-  width: 50%;
+  width: 45%;
 }
 .show-btn {
-  // display: flex;
-  // width: 50%;
-  // padding: 0 15px 0 30px;
-  margin: 0 10px 0 20px;
+  width: 100%;
   text-align: center;
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
   background: olivedrab;
-  border-left: solid 8px darkgreen;
   color: white;
   font-weight: bold;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
@@ -139,24 +136,21 @@ textarea {
   transform: translateY(2px);
 }
 .show-btn:hover {
-  color: palegoldenrod
+  text-decoration: none;
+  color: white;
 }
 
 .like-btn-area {
   display: flex;
-  width: 50%;
+  width: 45%;
 }
 .like-btn {
-  // display: flex;
-  // width: 50%;
-  // padding: 0 30px 0 15px;
-  margin: 0 20px 0 10px;
+  width: 100%;
   text-align: center;
   display: inline-block;
-  padding: 0.5em 1em;
+  padding: 0.5em 0 0.5em 0;
   text-decoration: none;
-  background: firebrick;
-  border-left: solid 8px #ff7c5c;
+  background: crimson;
   color: white;
   font-weight: bold;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
@@ -166,7 +160,31 @@ textarea {
   transform: translateY(2px);
 }
 .like-btn:hover {
-  color: palegoldenrod;
+  color: white;
+  text-decoration: none;
+}
+
+.dislike-btn {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  padding: 0.5em 0 0.5em 0;
+  text-decoration: none;
+  border: solid 1px crimson;
+  color: crimson;
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.dislike-btn:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+.dislike-btn:hover {
+  color: crimson;
+  text-decoration: none;
+}
+.like-btn-show {
+  margin: 20px 0 10px 0;
 }
 
 .edit-btn {
@@ -213,7 +231,7 @@ textarea {
 .recipe-title {
   overflow-wrap: break-word;
   word-wrap: break-word;
-  padding: 15px;
+  // padding: 15px;
 }
 
 .show-head {

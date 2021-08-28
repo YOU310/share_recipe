@@ -2,6 +2,7 @@
 
 <%= render "layouts/error_messages_post" %>
 
+<div>
 <%= form_with model: @post, local: true do |f| %>
   <div class="newpost-area mx-auto">
     <div>
@@ -38,3 +39,4 @@
   </div>
 
 <% end %>
+</div>

@@ -3,8 +3,12 @@
   <div class="recipe-title-area col-md-8">
     <p class="mt-0 mb-0 recipe-title"><%= @post.title %></p>
   </div>
-  <div class="col-md-4 show-like-btn-area">
-    <a href="#" class="like-btn w-100">お気に入り登録</a>
+  <div class="col-md-4 like-btn-show" id="post-<%= @post.id %>">
+    <% if @post.liked_by?(current_user) %>
+      <%= render "like", post: @post %>
+    <% else %>
+      <%= render "dislike", post: @post %>
+    <% end %>
   </div>
 
   <div class="show-top-left col-md-6 px-0">
@@ -49,6 +53,7 @@
     <%= link_to t(".update"), edit_post_path, class: "btn-edit w-100" %>
   <% end %>
 </div>
+
 <hr>
 <div class="d-flex justify-content-center">
   <%= link_to "コメントする", new_post_comment_path(@post), class:"comment-index-btn-left btn-back" %>

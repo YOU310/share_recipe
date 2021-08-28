@@ -13,13 +13,19 @@
       <h5 class="card-title"><%= simple_format(post.title) %></h5>
       <p class="card-text">投稿者：<%= post.user.name %></p>
       <p class="card-text">分類：<%= post.genre_i18n %></p>
+
       <div class="btn-area">
-      <div class="show-btn-area">
-        <%= link_to("詳細", "/posts/#{post.id}", class: "show-btn text-nowrap w-100")%>
-      </div>
-      <div class="like-btn-area">
-        <%= link_to("お気に入り", "/posts/#{post.id}", class: "like-btn text-nowrap w-100")%>
-      </div>
+        <div class="show-btn-area">
+          <%= link_to("詳細", "/posts/#{post.id}", class: "show-btn")%>
+        </div>
+        <div class="like-btn-area" id="post-<%= post.id %>">
+          <% if post.liked_by?(current_user) %>
+            <%= render "like", post: post %>
+          <% else %>
+            <%= render "dislike", post: post %>
+          <% end %>
+          <%# <%= link_to("お気に入りああ", "/posts/#{post.id}", class: "like-btn text-nowrap w-100") %>
+        </div>
       </div>
     </div>
   </div>
