@@ -90,10 +90,12 @@ textarea {
 .video-area {
   position: relative;
   display: flex;
-  min-width: 300px;
-  max-width: 500px;
   height: 500px;
   justify-content: center;
+}
+
+.video {
+  width: 100%;
 }
 
 .video-img {
@@ -182,7 +184,7 @@ textarea {
   text-decoration: none;
 }
 .like-btn-show {
-  margin: 10px 0 10px 0;
+  margin: 20px 0 10px 0;
 }
 
 .edit-btn {
@@ -229,7 +231,7 @@ textarea {
 .recipe-title {
   overflow-wrap: break-word;
   word-wrap: break-word;
-  padding: 15px;
+  // padding: 15px;
 }
 
 .show-head {

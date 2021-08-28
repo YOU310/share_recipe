@@ -41,8 +41,8 @@ ja:
       video: 動画
       post: 投稿する
     edit:
-      image: 画像（変更する場合のみ選択）
-      video: 動画（変更する場合のみ選択）
+      image: 画像（変更する場合のみ）
+      video: 動画（変更する場合のみ）
       update: 更新
     show:
       update: レシピ編集

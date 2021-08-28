@@ -1,5 +1,4 @@
 <h4>レシピ詳細</h4>
-</div class="w-100 mx-auto">
 <div class="recipe-base mx-auto row">
   <div class="recipe-title-area col-md-8">
     <p class="mt-0 mb-0 recipe-title"><%= @post.title %></p>
@@ -54,7 +53,7 @@
     <%= link_to t(".update"), edit_post_path, class: "btn-edit w-100" %>
   <% end %>
 </div>
-</div>
+
 <hr>
 <div class="d-flex justify-content-center">
   <%= link_to "コメントする", new_post_comment_path(@post), class:"comment-index-btn-left btn-back" %>
