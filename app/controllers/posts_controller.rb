@@ -8,6 +8,10 @@ class PostsController < ApplicationController
     @posts = @q.result.genre_classification(params[:genre]).page(params[:page]).per(PER_PAGE)
   end
 
+  def list
+    @posts = current_user.liked_posts
+  end
+
   def new
     @post = current_user.posts.new
   end
