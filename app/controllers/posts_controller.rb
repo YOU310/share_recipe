@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def list
-    @list = current_user.liked_posts
+    @posts = current_user.liked_posts
   end
 
   def new

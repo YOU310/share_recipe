@@ -1,11 +1,11 @@
 module ApplicationHelper
   def max_width
-    if controller_name == "posts" && action_name != "index" || controller_name == "comments"
-      "mw-md"
-    elsif devise_controller?
+    if devise_controller?
       "mw-sm"
-    else
+    elsif (controller_name == "posts" && action_name == "index") || (controller_name == "posts" && action_name == "list")
       "mw-xl"
+    else
+      "mw-md"
     end
   end
 
