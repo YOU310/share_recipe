@@ -14,12 +14,12 @@
 
         <div class="px-3 my-2 col-sm-7">
           <%= search_form_for @q do |f| %>
-            <div class="row">
-              <div class="pr-0 col-9">
+            <div class="row search-area m-0 p-0">
+              <div class="p-0 col-9">
                 <%= f.search_field :title_or_user_name_or_material_cont, placeholder: "キーワード検索", class: "form-control" %>
               </div>
-              <div class="col-3">
-                <%= f.submit "検索", class:"btn btn-outline-success" %>
+              <div class="p-0 pl-1 col-3">
+                <%= f.submit "検索", class:"btn btn-outline-success w-100" %>
               </div>
             </div>
           <% end %>
