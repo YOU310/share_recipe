@@ -1,14 +1,13 @@
+
 <%= render "layouts/logo_serch_area" %>
 
-<h4>レシピ一覧（<%= index_title(params[:genre]) %>）</h4>
+<div class="paginate-bar">
+  <%= paginate @posts %>
+</div>
 
-<%= paginate @posts %>
+
+<h4 class="pt-4">レシピ一覧（<%= index_title(params[:genre]) %>）</h4>
 
 <div class="row d-flex align-items-center">
   <%= render partial: "post", collection: @posts %>
-</div>
-
-<%= paginate @posts %>
-
-
-  
+</div>  
