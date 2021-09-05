@@ -1,66 +1,91 @@
 <div class="fixed-top">
-<nav class="navbar navbar-expand-sm bg-white navbar-light pt-0 pb-0 pl-0 text-right navbar-top">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <nav class="navbar navbar-expand-sm bg-white navbar-light pt-0 pb-0 px-0 text-right navbar-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            レシピ一覧
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to root_path do%><li class="dropdown-item">全レシピ</li><% end %>
-            <%= link_to root_path(genre: "invisible") do%><li class="dropdown-item">&nbsp;分類未設定</li><% end %>
-            <%= link_to root_path(genre: "appetizer") do%><li class="dropdown-item">&nbsp;前菜/温菜</li><% end %>
-            <%= link_to root_path(genre: "main") do%><li class="dropdown-item">&nbsp;メイン/パスタなど</li><% end %>
-            <%= link_to root_path(genre: "dessert") do%><li class="dropdown-item">&nbsp;デザート</li><% end %>
-            <%= link_to root_path(genre: "drink") do%><li class="dropdown-item">&nbsp;ドリンク</li><% end %>
-          </ul>
-        </li>
+    <div class="flex-column w-100">
+      <div class="collapse navbar-collapse px-3" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                レシピ一覧
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to root_path do%><li class="dropdown-item">全レシピ</li><% end %>
+                <%= link_to root_path(genre: "invisible") do%><li class="dropdown-item">&nbsp;分類未設定</li><% end %>
+                <%= link_to root_path(genre: "appetizer") do%><li class="dropdown-item">&nbsp;前菜/温菜</li><% end %>
+                <%= link_to root_path(genre: "main") do%><li class="dropdown-item">&nbsp;メイン/パスタなど</li><% end %>
+                <%= link_to root_path(genre: "dessert") do%><li class="dropdown-item">&nbsp;デザート</li><% end %>
+                <%= link_to root_path(genre: "drink") do%><li class="dropdown-item">&nbsp;ドリンク</li><% end %>
+              </ul>
+            </li>
 
-        <li class="nav-item active">
-          <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-link active text-success" %>
-        </li>
+            <li class="nav-item active">
+              <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-link active text-success" %>
+            </li>
 
-        <li class="nav-item active">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav-link active" %>
-        </li>
+            <li class="nav-item active">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav-link active" %>
+            </li>
 
-      <% else %>
-        <li class="nav-item active">
-          <%= link_to "新規ユーザー登録", new_user_registration_path, class: "nav-link active text-success" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "ログイン", new_user_session_path, class: "nav-link active" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "nav-link active text-primary" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+          <% else %>
+            <li class="nav-item active">
+              <%= link_to "新規ユーザー登録", new_user_registration_path, class: "nav-link active text-success" %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to "ログイン", new_user_session_path, class: "nav-link active" %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "nav-link active text-primary" %>
+            </li>
+          <% end %>
+        </ul>
 
-  <ul class="navbar-nav">
-    <% if request.path.include?("sign_") %>
-      <li>
-        <a>ようこそReciperへ</a>
-      </li>
-    <% elsif current_user.email == "guest@example.com" %>
-      <li>
-        <a>ようこそゲストさん</a>
-      </li>
-    <% elsif current_user.name? %>
-      <li class="nav-item">
-        <a>ようこそ<%= current_user.name %>さん</a>
-      </li>
-    <% else current_user.email? %>
-      <li>
-        <a>ログイン中のE-mail:<%= current_user.email %></a>
-      </li>
-    <% end %>
-    </ul>
-</nav>
+        <ul class="navbar-nav">
+          <% if request.path.include?("sign_") %>
+            <li>
+              <a>ようこそReciperへ</a>
+            </li>
+          <% elsif current_user.email == "guest@example.com" %>
+            <li>
+              <a>ようこそゲストさん</a>
+            </li>
+          <% elsif current_user.name? %>
+            <li class="nav-item">
+              <a>ようこそ<%= current_user.name %>さん</a>
+            </li>
+          <% else current_user.email? %>
+            <li>
+              <a>ログイン中のE-mail:<%= current_user.email %></a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+
+      
+
+      <div class="text-center">
+        <%= render "layouts/flash" %>
+      </div>
+
+      <div>
+        <% if controller_name == "posts" && action_name == "index" %>
+          <div class="paginate-bar">
+            <%= paginate @posts%>
+          </div>
+        <% elsif controller_name == "comments" && action_name == "index"%>
+          <div class="comments-bar">
+            <%= paginate @comments %>
+
+            <div class="d-flex justify-content-center comment-btn-area mx-auto mb-0 pb-2">
+              <%= link_to "コメントする", new_post_comment_path(@post), class:"comment-index-btn-left btn-back" %>
+              <%= link_to "レシピ詳細へ", "/posts/#{@post.id}", class:"comment-index-btn-right btn-back" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </nav>
 </div>

@@ -1,4 +1,9 @@
-<div class="container-fluid">
+<% if @posts_all.count >= 13 %>
+  <div class="container-fluid logo-search-high">
+<% else %>
+  <div class="container-fluid logo-search-short">
+<% end %>
+
   <div class="row">
     <div class="d-flex col-lg-7">
       <div class="row d-flex align-items-center">
@@ -14,12 +19,12 @@
 
         <div class="px-3 my-2 col-sm-7">
           <%= search_form_for @q do |f| %>
-            <div class="row">
-              <div class="pr-0 col-9">
+            <div class="row search-area m-0 p-0">
+              <div class="p-0 col-9">
                 <%= f.search_field :title_or_user_name_or_material_cont, placeholder: "キーワード検索", class: "form-control" %>
               </div>
-              <div class="col-3">
-                <%= f.submit "検索", class:"btn btn-outline-success" %>
+              <div class="p-0 pl-1 col-3">
+                <%= f.submit "検索", class:"btn btn-outline-success w-100" %>
               </div>
             </div>
           <% end %>
@@ -29,11 +34,11 @@
 
     <div class="d-flex align-items-center col-lg-5">
       <div class="w-100 col-sm-6 p-0 mr-1">
-        <%= link_to "＠新規投稿", new_post_path, class:"btn btn-primary btn-logo text-white w-100" %>
+        <%= link_to "＠新規投稿", new_post_path, class:"show-btn text-white w-100" %>
       </div>
 
       <div class="w-100 col-sm-6 p-0 ml-1">
-        <%= link_to "＠お気に入り", posts_list_path, class:"like-btn btn-logo text-white w-100" %>
+        <%= link_to "＠Myフォルダ", posts_list_path, class:"like-btn text-white w-100" %>
       </div>
     </div>
   </div>

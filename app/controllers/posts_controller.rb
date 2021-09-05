@@ -5,7 +5,8 @@ class PostsController < ApplicationController
 
   def index
     @q = Post.includes(:user, :likes).ransack(params[:q])
-    @posts = @q.result.genre_classification(params[:genre]).page(params[:page]).per(PER_PAGE)
+    @posts_all = @q.result.genre_classification(params[:genre])
+    @posts = @posts_all.page(params[:page]).per(PER_PAGE)
   end
 
   def list
@@ -19,7 +20,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to @post, notice: "レシピを投稿しました"
+      redirect_to root_path, notice: "レシピを投稿しました"
     else
       flash.now[:alert] = "投稿に失敗しました"
       render :new

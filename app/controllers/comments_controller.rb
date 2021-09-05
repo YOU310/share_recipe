@@ -6,7 +6,8 @@ class CommentsController < ApplicationController
 
   def index
     @post = Post.find(params[:post_id])
-    @comments = @post.comments.order(id: :DESC).page(params[:page]).per(PER_PAGE)
+    @comments_all = @post.comments
+    @comments = @comments_all.order(id: :DESC).page(params[:page]).per(PER_PAGE)
   end
 
   def show
@@ -21,7 +22,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     current_user.comments.create!(comment_params)
-    redirect_to post_comments_path(@post)
+    redirect_to post_comments_path(@post), notice: "コメントを投稿しました"
   end
 
   def edit
@@ -30,12 +31,12 @@ class CommentsController < ApplicationController
 
   def update
     Comment.find(params[:id]).update!(comment_params)
-    redirect_to comments_path
+    redirect_to comments_path, notice: "コメントを編集しました"
   end
 
   def destroy
     Comment.find(params[:id]).destroy!
-    redirect_to comments_path
+    redirect_to comments_path, notice: "コメントを削除しました"
   end
 
   private
