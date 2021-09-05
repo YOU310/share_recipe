@@ -79,7 +79,7 @@
           <div class="comments-bar">
             <%= paginate @comments %>
 
-            <div class="d-flex justify-content-center comment-btn-area mx-auto mb-0">
+            <div class="d-flex justify-content-center comment-btn-area mx-auto mb-0 pb-2">
               <%= link_to "コメントする", new_post_comment_path(@post), class:"comment-index-btn-left btn-back" %>
               <%= link_to "レシピ詳細へ", "/posts/#{@post.id}", class:"comment-index-btn-right btn-back" %>
             </div>

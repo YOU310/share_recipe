@@ -6,7 +6,8 @@ class CommentsController < ApplicationController
 
   def index
     @post = Post.find(params[:post_id])
-    @comments = @post.comments.order(id: :DESC).page(params[:page]).per(PER_PAGE)
+    @comments_all = @post.comments
+    @comments = @comments_all.order(id: :DESC).page(params[:page]).per(PER_PAGE)
   end
 
   def show

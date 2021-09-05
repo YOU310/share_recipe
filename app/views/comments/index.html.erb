@@ -1,4 +1,8 @@
-<div class="comments-container">
+<% if @comments_all.count >= 11 %>
+  <div class="comments-container-high">
+<% else %>
+  <div class="comments-container-short">
+<% end %>
   <h4>コメント一覧</h4>
   <div class="w-75 mx-auto">
     <%= render partial: "comment", collection: @comments %>

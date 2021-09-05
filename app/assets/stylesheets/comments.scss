@@ -59,15 +59,13 @@
 }
 
 .comments-bar {
-  // padding-top: 10px;
-  // position: fixed;
-  // top: 40px;
-  // left: 0; 
-  // width: 100%;
   // z-index: 10;
   background-color: ivory;
 }
 
-.comments-container {
-  margin-top: 100px;
+.comments-container-high {
+  margin-top: 80px;
+}
+.comments-container-short {
+  margin-top: 25px;
 }
