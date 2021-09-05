@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     current_user.comments.create!(comment_params)
-    redirect_to post_comments_path(@post), notice: "投稿しました"
+    redirect_to post_comments_path(@post), notice: "コメントを投稿しました"
   end
 
   def edit
@@ -30,12 +30,12 @@ class CommentsController < ApplicationController
 
   def update
     Comment.find(params[:id]).update!(comment_params)
-    redirect_to comments_path
+    redirect_to comments_path, notice: "コメントを編集しました"
   end
 
   def destroy
     Comment.find(params[:id]).destroy!
-    redirect_to comments_path
+    redirect_to comments_path, notice: "コメントを削除しました"
   end
 
   private

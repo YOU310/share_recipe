@@ -1,5 +1,5 @@
 <div class="fixed-top">
-<nav class="navbar navbar-expand-sm bg-white navbar-light pt-0 pb-0 px-2 text-right navbar-top">
+<nav class="navbar navbar-expand-sm bg-white navbar-light pt-0 pb-0 px-0 text-right navbar-top">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -43,30 +43,48 @@
       <% end %>
     </ul>
 
-  <ul class="navbar-nav">
-    <% if request.path.include?("sign_") %>
-      <li>
-        <a>ようこそReciperへ</a>
-      </li>
-    <% elsif current_user.email == "guest@example.com" %>
-      <li>
-        <a>ようこそゲストさん</a>
-      </li>
-    <% elsif current_user.name? %>
-      <li class="nav-item">
-        <a>ようこそ<%= current_user.name %>さん</a>
-      </li>
-    <% else current_user.email? %>
-      <li>
-        <a>ログイン中のE-mail:<%= current_user.email %></a>
-      </li>
-    <% end %>
+    <ul class="navbar-nav">
+      <% if request.path.include?("sign_") %>
+        <li>
+          <a>ようこそReciperへ</a>
+        </li>
+      <% elsif current_user.email == "guest@example.com" %>
+        <li>
+          <a>ようこそゲストさん</a>
+        </li>
+      <% elsif current_user.name? %>
+        <li class="nav-item">
+          <a>ようこそ<%= current_user.name %>さん</a>
+        </li>
+      <% else current_user.email? %>
+        <li>
+          <a>ログイン中のE-mail:<%= current_user.email %></a>
+        </li>
+      <% end %>
     </ul>
-    </div>
+  </div>
 
-    <div class="w-100 text-center">
+  
+
+  <div class="text-center">
     <%= render "layouts/flash" %>
-    </div>
+  </div>
+
+  <div>
+    <% if controller_name == "posts" && action_name == "index" %>
+      <div class="paginate-bar">
+        <%= paginate @posts %>
+      </div>
+    <% elsif controller_name == "comments" && action_name == "index"%>
+      <div class="comments-bar">
+        <%= paginate @comments %>
+
+        <div class="d-flex justify-content-center comment-btn-area mx-auto">
+        <%= link_to "コメントする", new_post_comment_path(@post), class:"comment-index-btn-left btn-back" %>
+        <%= link_to "レシピ詳細へ", "/posts/#{@post.id}", class:"comment-index-btn-right btn-back" %>
+      </div>
+    <% end %>
+  </div>
 
 </div>
 </nav>
