@@ -1,9 +1,10 @@
 <div class="fixed-top">
-<nav class="navbar navbar-expand-sm bg-white navbar-light pt-0 pb-0 pl-0 text-right navbar-top">
+<nav class="navbar navbar-expand-sm bg-white navbar-light pt-0 pb-0 px-2 text-right navbar-top">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
+<div class="flex-column w-100">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
@@ -41,7 +42,6 @@
         </li>
       <% end %>
     </ul>
-  </div>
 
   <ul class="navbar-nav">
     <% if request.path.include?("sign_") %>
@@ -62,5 +62,12 @@
       </li>
     <% end %>
     </ul>
+    </div>
+
+    <div class="w-100 text-center">
+    <%= render "layouts/flash" %>
+    </div>
+
+</div>
 </nav>
 </div>

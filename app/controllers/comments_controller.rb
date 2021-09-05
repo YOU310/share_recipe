@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     current_user.comments.create!(comment_params)
-    redirect_to post_comments_path(@post)
+    redirect_to post_comments_path(@post), notice: "投稿しました"
   end
 
   def edit
