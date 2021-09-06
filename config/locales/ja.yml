@@ -49,5 +49,8 @@ ja:
   comments:
     new:
       post: 投稿する
+  time:
+    formats:
+      default: "%Y %-m/%-d(%a) %-H:%-M"
 
 

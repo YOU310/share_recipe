@@ -6,10 +6,18 @@
   <% else %>
     <p>タイトル：無題</p>
   <% end %>
+  <p>投稿日時：<%= l @comment.created_at %></p>
   <p>From：<%= @comment.user.name %></p>
   <p><%= simple_format(@comment.content) %></p>
   <p><%= @comment.image %></p>
+
+  <% if current_user.id == @comment.user_id %>
+    <div>
+      <%= link_to "編集", edit_post_comment_path %>
+      <%= link_to "削除", post_comment_path, method: :delete, data: { confirm: "削除しますか？" } %>
+    </div>
+  <% end %>
 </div>
-  <hr>
+<hr>
 
 <%= link_to "一覧へ戻る", post_comments_path, class:"w-100 btn-back" %>
