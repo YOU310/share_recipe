@@ -21,8 +21,16 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    current_user.comments.create!(comment_params)
-    redirect_to post_comments_path(@post), notice: "コメントを投稿しました"
+    @comment = Comment.new(comment_params)
+    if @comment.save
+      redirect_to post_comments_path(@post), notice: "コメントを投稿しました"
+    else
+      flash.now[:alert] = "投稿に失敗しました"
+      render :new
+    end
+    # current_user.comments.create!(comment_params)
+    # redirect_to post_comments_path(@post), notice: "コメントを投稿しました"
+
   end
 
   def edit

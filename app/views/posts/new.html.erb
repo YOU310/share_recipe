@@ -3,40 +3,41 @@
 <%= render "layouts/error_messages_post" %>
 
 <div>
-<%= form_with model: @post, local: true do |f| %>
-  <div class="newpost-area mx-auto">
-    <div>
-      <div class="newpost-col"><%= f.label :title %></div>
-      <p><%= f.text_field :title, class:"w-100" %></p>
-    </div>
-    <div>
-      <div class="newpost-col"><%= f.label :genre %></div>
-      <p><%= f.select :genre, Post.genres_i18n.invert %></p>
-    </div>
+  <%= form_with model: @post, local: true do |f| %>
+    <div class="newpost-area mx-auto">
+      <div>
+        <div class="newpost-col"><%= f.label :title %></div>
+        <p><%= f.text_field :title, class:"w-100" %></p>
+      </div>
+      <div>
+        <div class="newpost-col"><%= f.label :genre %></div>
+        <p><%= f.select :genre, Post.genres_i18n.invert %></p>
+      </div>
+
+      <div>
+        <div class="newpost-col"><%= f.label :material %></div>
+        <p><%= f.text_area :material, class: "w-100" %></p>
+      </div>
+
+      <div>
+        <div class="newpost-col"><%= f.label :recipe %><div>
+        <p><%= f.text_area :recipe, class: "w-100" %><div>
+      </div>
+
+      <div>
+        <div class="newpost-col"><%= t(".image") %></div>
+        <p><%= f.file_field :image, :accept => "image/*" %></p>
+      </div>
+
+      <div>
+        <div class="newpost-col"><%= t(".video") %></div>
+        <p><%= f.file_field :video, :accept => "video/*" %></p>
+      </div>
 
     <div>
-      <div class="newpost-col"><%= f.label :material %></div>
-      <p><%= f.text_area :material, class: "w-100" %></p>
+      <%= f.submit t(".post"), class: 'btn-post w-100' %>
     </div>
 
-    <div>
-      <div class="newpost-col"><%= f.label :recipe %><div>
-      <p><%= f.text_area :recipe, class: "w-100" %><div>
-    </div>
+  <% end %>
 
-    <div>
-      <div class="newpost-col"><%= t(".image") %></div>
-      <p><%= f.file_field :image, :accept => "image/*" %></p>
-    </div>
-
-    <div>
-      <div class="newpost-col"><%= t(".video") %></div>
-      <p><%= f.file_field :video, :accept => "video/*" %></p>
-    </div>
-
-  <div>
-    <%= f.submit t(".post"), class: 'btn-post w-100' %>
-  </div>
-
-<% end %>
 </div>
