@@ -78,4 +78,7 @@ body {
 .page-item:last-child .page-link {
   border-radius: 15px;
 }
+.page-item.active .page-link {
+  background-color: cornflowerblue;
+}
 
