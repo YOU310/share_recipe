@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_post, only: %i[edit update]
+  before_action :set_post, only: %i[edit update destroy]
   before_action :guest_check, only: %i[new create edit update]
 
   PER_PAGE = 10
@@ -28,23 +28,27 @@ class CommentsController < ApplicationController
       flash.now[:alert] = "投稿に失敗しました"
       render :new
     end
-    # current_user.comments.create!(comment_params)
-    # redirect_to post_comments_path(@post), notice: "コメントを投稿しました"
-
   end
 
   def edit
+    @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
   end
 
   def update
-    Comment.find(params[:id]).update!(comment_params)
-    redirect_to comments_path, notice: "コメントを編集しました"
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id])
+    if @comment.update(comment_params)
+      redirect_to post_comments_path(@post), notice: "コメントを編集しました"
+    else
+      flash.now[:alert] = "編集に失敗しました"
+      render action: :edit
+    end
   end
 
   def destroy
     Comment.find(params[:id]).destroy!
-    redirect_to comments_path, notice: "コメントを削除しました"
+    redirect_to post_comments_path, notice: "コメントを削除しました"
   end
 
   private
@@ -54,8 +58,8 @@ class CommentsController < ApplicationController
   end
 
   def set_post
-    @post = current_user.posts.find_by(id: params[:id])
-    redirect_to root_path, alert: "権限がありません" if @post.nil?
+    @comment = current_user.comments.find_by(id: params[:id])
+    redirect_to post_comment_path, alert: "権限がありません" if @comment.nil?
   end
 
   def guest_check

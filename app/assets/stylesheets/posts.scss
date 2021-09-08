@@ -88,6 +88,7 @@ textarea {
 }
 
 .video-area {
+  margin-bottom: 10px;
   position: relative;
   display: flex;
   height: 500px;
@@ -302,8 +303,7 @@ nav ul{
   align-items: center;
   justify-content: center;
   height: 36px;
-  margin: 10px;
-  margin-top: 10px;
+  margin: 0 10px 10px 10px;
   color: white;
   background-color: rgb(76, 168, 76);
   border-radius: 3px;

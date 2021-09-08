@@ -3,7 +3,7 @@
     <div class="card-body">
       <p class="card-text">From：<%= comment.user.name %></p>
       <p class="card-text">タイトル：<%= comment.title %></p>
-      <p class="card-text">投稿日時：</p>
+      <p class="card-text">投稿日時：<%= l comment.created_at %></p>
     </div>
   <% end %>
 </div>

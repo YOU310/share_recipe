@@ -65,3 +65,20 @@ body {
 .navbar-top {
   z-index: 20;
 }
+
+.pagination>li>a{
+  background-color: ivory;
+  border-radius: 15px;
+  border: none;
+  color: royalblue;
+}
+.page-item:first-child .page-link {
+  border-radius: 15px;
+}
+.page-item:last-child .page-link {
+  border-radius: 15px;
+}
+.page-item.active .page-link {
+  background-color: cornflowerblue;
+}
+
