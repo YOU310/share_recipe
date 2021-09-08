@@ -57,5 +57,5 @@
 <hr>
 <div class="d-flex justify-content-center">
   <%= link_to "コメントする", new_post_comment_path(@post), class:"comment-index-btn-left btn-back" %>
-  <%= link_to "コメント一覧へ", post_comments_path(@post), class:"comment-index-btn-right btn-back" %>
+  <%= link_to "コメント一覧(#{@comments_all.count})", post_comments_path(@post), class:"comment-index-btn-right btn-back" %>
 </div>
