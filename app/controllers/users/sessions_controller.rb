@@ -1,5 +1,5 @@
 module Users
-  class SessionsController < Devise::SessionsController
+  class SessionsController < Devise::SessionsController 
     def create
       devise_create
     end

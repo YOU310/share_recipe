@@ -1,5 +1,5 @@
 <div class="card-base col-md-6 col-lg-4">
-  <div class="card mx-auto">
+  <div class="card  mx-auto">
     <% if post.image? %>
       <img src="<%= post.image_url %>" class="card-img-top img">
     <% else %>
@@ -16,7 +16,9 @@
 
       <div class="btn-area">
         <div class="show-btn-area">
-          <%= link_to("詳細", "/posts/#{post.id}", class: "show-btn")%>
+          <%= link_to "/posts/#{post.id}", class: "show-btn" do %>
+            <i class="far fa-eye"></i> 詳細
+          <% end %>
         </div>
         <div class="like-btn-area" id="post-<%= post.id %>">
           <% if post.liked_by?(current_user) %>

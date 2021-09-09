@@ -8,8 +8,8 @@
       <div class="collapse navbar-collapse px-3" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <% if user_signed_in? %>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-body" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown d-flex align-items-center mr-3">
+              <i class="far fa-list-alt"></i><a class="nav-link dropdown-toggle text-body" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 レシピ一覧
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -22,57 +22,28 @@
               </div>
             </li>
 
-            <li class="nav-item active">
-              <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-link active" %>
+            <li class="nav-item active d-flex align-items-center mr-3">
+              <i class="fas fa-user"></i><%= link_to "アカウント編集", edit_user_registration_path, class: "nav-link active" %>
             </li>
 
-            <li class="nav-item active">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav-link active" %>
+            <li class="nav-item active  d-flex align-items-center mr-3">
+              <i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav-link active" %>
             </li>
 
           <% else %>
-            <li class="nav-item active">
-              <%= link_to "新規ユーザー登録", new_user_registration_path, class: "nav-link active" %>
+            <li class="nav-item active d-flex align-items-center mr-3">
+              <i class="fas fa-user-edit"></i><%= link_to "新規ユーザー登録", new_user_registration_path, class: "nav-link active" %>
             </li>
-            <li class="nav-item active">
-              <%= link_to "ログイン", new_user_session_path, class: "nav-link active" %>
+            <li class="nav-item active d-flex align-items-center mr-3">
+              <i class="fas fa-sign-in-alt"></i><%= link_to "ログイン", new_user_session_path, class: "nav-link active" %>
             </li>
-            <li class="nav-item active">
-              <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "nav-link active" %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-
-<%
-=begin
-%>
-        <ul class="navbar-nav">
-          <% if request.path.include?("sign_") %>
-            <li>
-              <a>ようこそReciperへ</a>
-            </li>
-          <% elsif current_user.email == "guest@example.com" %>
-            <li>
-              <a>ようこそゲストさん</a>
-            </li>
-          <% elsif current_user.name? %>
-            <li class="nav-item">
-              <a>ようこそ<%= current_user.name %>さん</a>
-            </li>
-          <% else current_user.email? %>
-            <li>
-              <a>ログイン中のE-mail:<%= current_user.email %></a>
+            <li class="nav-item active d-flex align-items-center mr-3">
+              <i class="far fa-address-card"></i><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "nav-link active" %>
             </li>
           <% end %>
         </ul>
       </div>
-<%
-=end
-%>
-
       
-
       <div class="text-center">
         <%= render "layouts/flash" %>
       </div>
@@ -86,9 +57,13 @@
           <div class="comments-bar">
             <%= paginate @comments %>
 
-            <div class="d-flex justify-content-center comment-btn-area mx-auto mb-0 pb-2">
-              <%= link_to "コメントする", new_post_comment_path(@post), class:"comment-index-btn-left btn-back" %>
-              <%= link_to "レシピ詳細へ", "/posts/#{@post.id}", class:"comment-index-btn-right btn-back" %>
+            <div class="d-flex justify-content-center comment-btn-area mx-auto mb-0 pb-2 mw-md">
+              <%= link_to new_post_comment_path(@post), class:"comment-index-btn-left btn-back" do %>
+                <i class="far fa-comment-dots"></i>コメントする
+              <% end %>
+              <%= link_to "/posts/#{@post.id}", class:"comment-index-btn-right btn-back" do %>
+                <i class="far fa-eye"></i>詳細へ戻る
+              <% end %>
             </div>
           </div>
         <% end %>

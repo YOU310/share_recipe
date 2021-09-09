@@ -50,12 +50,18 @@
     </div>
 
   <% if current_user.id == @post.user_id %>
-    <%= link_to t(".update"), edit_post_path, class: "btn-edit w-100" %>
+    <%= link_to  edit_post_path, class: "btn-edit w-100" do %>
+      <i class="fas fa-pencil-alt"></i>&nbsp<%= t(".update") %>
+    <% end %>
   <% end %>
 </div>
 
 <hr>
 <div class="d-flex justify-content-center">
-  <%= link_to "コメントする", new_post_comment_path(@post), class:"comment-index-btn-left btn-back" %>
-  <%= link_to "コメント一覧(#{@comments_all.count})", post_comments_path(@post), class:"comment-index-btn-right btn-back" %>
+  <%= link_to new_post_comment_path(@post), class:"comment-index-btn-left btn-back" do %>
+    <i class="far fa-comment-dots"></i>コメントする
+  <% end %>
+  <%= link_to post_comments_path(@post), class:"comment-index-btn-right btn-back" do %>
+    <i class="far fa-comments"></i>&nbsp<%= "一覧（#{@comments_all.count}）" %>
+  <% end %>
 </div>
