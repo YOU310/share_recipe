@@ -57,9 +57,13 @@
           <div class="comments-bar">
             <%= paginate @comments %>
 
-            <div class="d-flex justify-content-center comment-btn-area mx-auto mb-0 pb-2 w-75">
-              <%= link_to "コメントする", new_post_comment_path(@post), class:"comment-index-btn-left btn-back" %>
-              <%= link_to "レシピ詳細へ", "/posts/#{@post.id}", class:"comment-index-btn-right btn-back" %>
+            <div class="d-flex justify-content-center comment-btn-area mx-auto mb-0 pb-2 mw-md">
+              <%= link_to new_post_comment_path(@post), class:"comment-index-btn-left btn-back" do %>
+                <i class="far fa-comment-dots"></i>コメントする
+              <% end %>
+              <%= link_to "/posts/#{@post.id}", class:"comment-index-btn-right btn-back" do %>
+                <i class="far fa-eye"></i>詳細へ戻る
+              <% end %>
             </div>
           </div>
         <% end %>
