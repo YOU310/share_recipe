@@ -34,5 +34,6 @@ Metrics/MethodLength:
 Metrics/BlockLength:
   Exclude:
     - "app/admin/**/*"
-# Documentational:
-#   Enabled: false
+
+Metrics/AbcSize:
+  Max: 20
