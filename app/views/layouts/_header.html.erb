@@ -13,12 +13,12 @@
                 レシピ一覧
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to root_path, class:"index-link" do%><div class="dropdown-item">全レシピ</div><% end %>
-                <%= link_to root_path(genre: "invisible"), class:"index-link" do %><div class="dropdown-item">&nbsp;分類未設定</div><% end %>
-                <%= link_to root_path(genre: "appetizer"), class:"index-link" do %><div class="dropdown-item">&nbsp;前菜/温菜</div><% end %>
-                <%= link_to root_path(genre: "main"), class:"index-link" do %><div class="dropdown-item">&nbsp;メイン/パスタなど</div><% end %>
-                <%= link_to root_path(genre: "dessert"), class:"index-link" do %><div class="dropdown-item">&nbsp;デザート</div><% end %>
-                <%= link_to root_path(genre: "drink"), class:"index-link" do %><div class="dropdown-item">&nbsp;ドリンク</div><% end %>
+                <%= link_to posts_path, class:"index-link" do%><div class="dropdown-item">全レシピ</div><% end %>
+                <%= link_to posts_path(genre: "invisible"), class:"index-link" do %><div class="dropdown-item">&nbsp;分類未設定</div><% end %>
+                <%= link_to posts_path(genre: "appetizer"), class:"index-link" do %><div class="dropdown-item">&nbsp;前菜/温菜</div><% end %>
+                <%= link_to posts_path(genre: "main"), class:"index-link" do %><div class="dropdown-item">&nbsp;メイン/パスタなど</div><% end %>
+                <%= link_to posts_path(genre: "dessert"), class:"index-link" do %><div class="dropdown-item">&nbsp;デザート</div><% end %>
+                <%= link_to posts_path(genre: "drink"), class:"index-link" do %><div class="dropdown-item">&nbsp;ドリンク</div><% end %>
               </div>
             </li>
 

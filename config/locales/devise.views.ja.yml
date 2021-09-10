@@ -121,7 +121,7 @@ ja:
         sign_in: ログイン
         sign_up: アカウント登録
         guest_sign_in: ゲストログイン（閲覧用）
-      signed_in: "%{name}さん Reciperへようこそ"
+      signed_in: "%{name}さん Reciperへようこそ！"
     shared:
       links:
         back: 戻る
