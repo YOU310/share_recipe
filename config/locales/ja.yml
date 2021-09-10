@@ -53,6 +53,6 @@ ja:
       post: 投稿する
   time:
     formats:
-      default: "%Y %-m/%-d(%a) %-H:%-M"
+      default: "%Y-%-m-%-d(%a) %-H:%-M"
 
 

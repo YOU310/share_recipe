@@ -1,20 +1,24 @@
 <h4>コメント詳細</h4>
 
 <div class="show-comment-area mx-auto p-3">
+  <p class="comment-date"><%= l @comment.created_at %></p>
   <% if @comment.title.present? %>
-    <p>タイトル：<%= @comment.title %></p>
+    <p>&emsp;タイトル：<%= @comment.title %></p>
   <% else %>
-    <p>タイトル：無題</p>
+    <p>&emsp;タイトル：無題</p>
   <% end %>
-  <p>投稿日時：<%= l @comment.created_at %></p>
-  <p>From：<%= @comment.user.name %></p>
+  <p>&emsp;From：<%= @comment.user.name %></p>
   <p><%= simple_format(@comment.content) %></p>
   <p><%= @comment.image %></p>
 
   <% if current_user.id == @comment.user_id %>
-    <div>
-      <%= link_to "編集", edit_post_comment_path %>
-      <%= link_to "削除", post_comment_path, method: :delete, data: { confirm: "削除しますか？" } %>
+    <div class="comment-icon">
+      <%= link_to edit_post_comment_path do %>
+        <i class="fas fa-pencil-alt"></i>
+      <% end %>
+      <%= link_to post_comment_path, method: :delete, data: { confirm: "削除しますか？" } do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
     </div>
   <% end %>
 </div>
