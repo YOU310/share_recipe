@@ -27,6 +27,16 @@ StringLiterals:
 
 Layout/LineLength:
   Max: 160
+  Exclude:
+    - "app/helpers/**/*"
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - "app/helpers/**/*"
+
+Metrics/CyclomaticComplexity:
+    Exclude:
+    - "app/helpers/**/*"
 
 Metrics/MethodLength:
   Max: 20
