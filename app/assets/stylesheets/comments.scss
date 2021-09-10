@@ -57,7 +57,6 @@
 }
 
 .comments-bar {
-  // z-index: 10;
   background-color: ivory;
 }
 
@@ -66,4 +65,24 @@
 }
 .comments-container-short {
   margin-top: 25px;
+}
+
+.comment-icon {
+  text-align: right;
+a {
+  font-size: large;
+  padding-right: 10px;
+  color: mediumblue;
+  transition: 0.3s;
+  }
+}
+
+.comment-icon a:hover {
+  color: midnightblue;
+  text-decoration: none;
+}
+
+.comment-date {
+  font-size: 12px;
+  font-weight: bold;
 }

@@ -63,6 +63,6 @@ class CommentsController < ApplicationController
   end
 
   def guest_check
-    redirect_to root_path, alert: "ゲストログインでは、レシピの閲覧のみ可能です" if current_user.email == "guest@example.com"
+    redirect_to posts_path, alert: "ゲストログインでは、レシピの閲覧のみ可能です" if current_user.email == "guest@example.com"
   end
 end

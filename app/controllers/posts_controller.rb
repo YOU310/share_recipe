@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to root_path, notice: "レシピを投稿しました"
+      redirect_to posts_path, notice: "レシピを投稿しました"
     else
       flash.now[:alert] = "投稿に失敗しました"
       render :new
@@ -53,10 +53,10 @@ class PostsController < ApplicationController
 
   def set_post
     @post = current_user.posts.find_by(id: params[:id])
-    redirect_to root_path, alert: "権限がありません" if @post.nil?
+    redirect_to posts_path, alert: "権限がありません" if @post.nil?
   end
 
   def guest_check
-    redirect_to root_path, alert: "ゲストログインでは、レシピの閲覧のみ可能です" if current_user.email == "guest@example.com"
+    redirect_to posts_path, alert: "ゲストログインでは、レシピの閲覧のみ可能です" if current_user.email == "guest@example.com"
   end
 end

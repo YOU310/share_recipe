@@ -1,9 +1,9 @@
 <div class="row">
   <%= link_to(post_comment_path(comment.post.id, comment.id), class: "card-comment") do %>
-    <div class="card-body">
-      <p class="card-text">From：<%= comment.user.name %></p>
-      <p class="card-text">タイトル：<%= comment.title %></p>
-      <p class="card-text">投稿日時：<%= l comment.created_at %></p>
+    <div class="card-body px-2">
+      <p class="card-text px-2 comment-date"><%= l comment.created_at %></p>
+      <p class="card-text px-2">&emsp;From：<%= comment.user.name %></p>
+      <p class="card-text px-2">&emsp;タイトル：<%= comment.title %></p>
     </div>
   <% end %>
 </div>
