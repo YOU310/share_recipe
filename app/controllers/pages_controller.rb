@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :top
 
-  def top; 
-  end
+  def top; end
 end
