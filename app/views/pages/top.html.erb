@@ -1,0 +1,87 @@
+<div class="top-container">
+  <div class="image-container">
+    <%= image_tag "img-top.jpeg", class: "img-top" %>
+    <div class="concept-container">
+      <div class="concept">
+        <div class="concept-1">
+          <p>いつでも、どこでも</p>
+          <p>同じ味とクオリティを</p>
+        </div>
+        <div class="concept-2">
+          <p>業務用レシピ共有アプリ</p>
+        </div>
+        <div class="concept-app-name">
+          <p>Reciper</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row top-btn-area w-75 mx-auto">
+    <div class="col-sm-6 d-flex justify-content-center mb-3">
+      <%= link_to new_user_registration_path, class:"signup-btn" do %>
+        今すぐ始める
+      <% end %>
+    </div>
+    <div class="col-sm-6 d-flex justify-content-center">
+      <%= link_to users_guest_sign_in_path, method: :post, class:"guest-btn" do %>
+        ゲストログイン
+      <% end %>
+    </div>
+  </div>
+
+  <div class="explain-container">
+    <div class="explain-title">
+      <p>Reciperとは</p>
+    </div>
+    <div class="explain-content">
+      <p>&emsp;系列飲食店において、同メニューのレシピの差異やクオリティの違いを無くす為の「レシピ共有アプリ」です。</p>
+      <p>&emsp;レシピ内容の変更等があった際もWEB上で更新ができ、複数の店舗に即座に情報を共有することができます。</p>
+    </div>
+  </div>
+
+  <div class="feature-container">
+    <div class="feature-app">
+      <p>Reciperの特徴</p>
+    </div>
+
+    <div class="row">
+    <div class="feature col-md-6">
+      <div class="feature-title">
+        <p>お気に入り機能</p>
+        </div>
+      <div class="feature-content">
+        <p>&emsp;自店でよく使うレシピや新メニューなどを登録しておき、すぐに閲覧することができます。</p>
+      </div>
+    </div>
+
+    <div class="feature col-md-6">
+      <div class="feature-title">
+        <p>画像/動画投稿機能</p>
+      </div>
+      <div class="feature-content">
+        <p>&emsp;文字だけでなく画像や動画を見ることにより、商品をよりイメージしやすくなります。</p>
+      </div>
+    </div>
+
+    <div class="feature col-md-6">
+      <div class="feature-title">
+        <p>コメント機能</p>
+        </div>
+      <div class="feature-content">
+        <p>&emsp;レシピに対してコメントを付けることにより、アプリ上でのやりとりが可能です。</p>
+      </div>
+    </div>
+
+    <div class="feature col-md-6">
+      <div class="feature-title">
+        <p>編集機能</p>
+      </div>
+      <div class="feature-content">
+        <p>&emsp;レシピに変更があった際や、盛り付けが変更になった場合にも即座に共有が可能です。</p>
+      </div>
+    </div>
+    </div>
+
+  </div>
+</div>

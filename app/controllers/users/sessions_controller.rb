@@ -1,5 +1,5 @@
 module Users
-  class SessionsController < Devise::SessionsController 
+  class SessionsController < Devise::SessionsController
     def create
       devise_create
     end
@@ -14,7 +14,7 @@ module Users
 
     def guest_sign_in
       sign_in User.guest
-      redirect_to root_path, notice: "ゲストユーザーとしてログインしました"
+      redirect_to posts_path, notice: "ゲストユーザーとしてログインしました"
     end
   end
 end

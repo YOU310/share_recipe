@@ -6,6 +6,5 @@ module Users
       redirect_to root_path, alert: "ゲストユーザーは削除できません。" if resource.email == "guest@example.com"
     end
 
-    def destroy; end
   end
 end

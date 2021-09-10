@@ -2,7 +2,7 @@ module ApplicationHelper
   def max_width
     if devise_controller?
       "mw-sm"
-    elsif (controller_name == "posts" && action_name == "index") || (controller_name == "posts" && action_name == "list")
+    elsif (controller_name == "posts" && action_name == "index") || (controller_name == "posts" && action_name == "list") || (controller_name == "pages" && action_name == "top")
       "mw-xl"
     else
       "mw-md"
