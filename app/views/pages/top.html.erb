@@ -24,7 +24,9 @@
       <% end %>
     </div>
     <div class="col-sm-6 d-flex justify-content-center">
-      <a class="guest-btn">ゲストログイン</a>
+      <%= link_to users_guest_sign_in_path, method: :post, class:"guest-btn" do %>
+        ゲストログイン
+      <% end %>
     </div>
   </div>
 

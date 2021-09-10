@@ -30,10 +30,6 @@
               <i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav-link active" %>
             </li>
 
-            <li class="nav-item active  d-flex align-items-center mr-3">
-              <i class="fas fa-sign-out-alt"></i><%= link_to "TOPへ", pages_top_path, class: "nav-link active" %>
-            </li>
-
           <% else %>
             <li class="nav-item active d-flex align-items-center mr-3">
               <i class="fas fa-user-edit"></i><%= link_to "新規ユーザー登録", new_user_registration_path, class: "nav-link active" %>
@@ -43,6 +39,9 @@
             </li>
             <li class="nav-item active d-flex align-items-center mr-3">
               <i class="far fa-address-card"></i><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "nav-link active" %>
+            </li>
+            <li class="nav-item active  d-flex align-items-center mr-3">
+              <i class="fas fa-chalkboard"></i><%= link_to "TOPへ", pages_top_path, class: "nav-link active" %>
             </li>
           <% end %>
         </ul>

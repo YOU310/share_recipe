@@ -64,18 +64,21 @@
 }
 
 .signup-btn {
-  color: black;
+  color: rgb(247, 84, 55);
   text-align: center;
   width: 90%;
   height: 50px;
   line-height: 50px;
   font-size: 20px;
-  border: solid 1px black;
+  border: solid 1px rgb(247, 84, 55);
   border-radius: 30px;
+  transition: 0.3s;
 }
 
 .signup-btn:hover {
   text-decoration: none;
+  color: white;
+  background-color: rgb(247, 84, 55);
 }
 
 .guest-btn {
@@ -87,10 +90,13 @@
   font-size: 20px;
   border: solid 1px black;
   border-radius: 30px;
+  transition: 0.3s;
 }
 
 .guest-btn:hover {
   text-decoration: none;
+  color: white;
+  background-color: rgb(42, 42, 131);
 }
 
 .explain-container {
