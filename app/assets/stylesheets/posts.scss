@@ -131,15 +131,9 @@ textarea {
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  // background: rgb(76, 168, 76);
-  // font-weight: bold;
-  // box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
   transition: 0.3s;
 }
-// .show-btn:active {
-//   box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
-//   transform: translateY(2px);
-// }
+
 .show-btn:hover {
   background: rgb(76, 167, 76);
   text-decoration: none;
@@ -159,13 +153,8 @@ textarea {
   text-decoration: none;
   background: rgb(247, 84, 55);
   color: white;
-  // font-weight: bold;
-  // box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
 }
-// .like-btn:active {
-//   box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
-//   transform: translateY(2px);
-// }
+
 .like-btn:hover {
   color: white;
   text-decoration: none;
@@ -181,12 +170,8 @@ textarea {
   border: solid 1px crimson;
   color: crimson;
   font-weight: bold;
-  // box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
 }
-// .dislike-btn:active {
-//   box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
-//   transform: translateY(2px);
-// }
+
 .dislike-btn:hover {
   color: crimson;
   text-decoration: none;
@@ -195,24 +180,6 @@ textarea {
   margin: 20px 0 10px 0;
 }
 
-// .edit-btn {
-//   margin: 20px 20px 20px 20px;
-//   text-align: center;
-//   display: inline-block;
-//   padding: 0.5em 1em;
-//   text-decoration: none;
-//   background: olivedrab;
-//   color: white;
-//   font-weight: bold;
-//   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-// }
-// .edit-btn:active {
-//   box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
-//   transform: translateY(2px);
-// }
-// .edit-btn:hover {
-//   color: palegoldenrod;
-// }
 .caption-area {
   margin-top: 10px;
 }
@@ -270,7 +237,6 @@ nav ul{
   color: crimson;
   background-color: ivory;
   border-radius: 3px;
-  // box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
   border: solid 1px crimson;
   transition: 0.3s;
 }
@@ -288,11 +254,9 @@ nav ul{
   color: #FFF;
   background: darkgray;
   border-radius: 3px;
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
   border: solid 2px lightslategrey
 }
 .cansel-btn:active {
-  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
   transform: translateY(2px);
 }
 .cansel-btn:hover {
@@ -307,9 +271,7 @@ nav ul{
   height: 36px;
   margin: 0 10px 10px 10px;
   color: forestgreen;
-  // background-color: rgb(76, 168, 76);
   border-radius: 3px;
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
   border: solid 1px rgb(6, 151, 6);
   transition: 0.3s;
 }
@@ -330,14 +292,13 @@ nav ul{
 
 .paginate-bar {
   width: 100%;
-  // z-index: 10;
   background-color: ivory;
+  ul {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 0;
 }
-.paginate-bar ul {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-bottom: 0;
-}
+  }
 
 .comments-bar ul {
   padding-top: 5px;
@@ -368,7 +329,6 @@ nav ul{
   display: inline-block;
   padding: 0.5em 0 0.5em 0;
   text-decoration: none;
-  // background: crimson;
   color: crimson;
   transition: 0.3s;
 }
