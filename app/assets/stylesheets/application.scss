@@ -17,8 +17,8 @@
  @import "bootstrap/scss/bootstrap";
 
  .base-container {
-  margin: 0 auto;
-  padding: 1rem;
+  // margin: 0 auto;
+  padding: 1rem 1rem 90px 1rem;
 }
 
 .mw-sm {
@@ -82,13 +82,14 @@ body {
   background-color: cornflowerblue;
 }
 
-footer {
+.footer {
   text-align: center;
   width: 100%;
-  padding: 10px 0;
+  // padding: 10px 0;
   color: white;
   background-color: midnightblue;
   p {
+    padding: 10px 0;
     margin-bottom: 0;
   }
 }

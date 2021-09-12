@@ -50,27 +50,6 @@
       <div class="text-center">
         <%= render "layouts/flash" %>
       </div>
-
-      <div>
-        <% if controller_name == "posts" && action_name == "index" %>
-          <div class="paginate-bar">
-            <%= paginate @posts%>
-          </div>
-        <% elsif controller_name == "comments" && action_name == "index"%>
-          <div class="comments-bar">
-            <%= paginate @comments %>
-
-            <div class="d-flex justify-content-center comment-btn-area mx-auto mb-0 pb-2 mw-md">
-              <%= link_to new_post_comment_path(@post), class:"comment-index-btn-left btn-back" do %>
-                <i class="far fa-comment-dots"></i>コメントする
-              <% end %>
-              <%= link_to "/posts/#{@post.id}", class:"comment-index-btn-right btn-back" do %>
-                <i class="far fa-eye"></i>詳細へ戻る
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-      </div>
     </div>
   </nav>
 </div>
