@@ -17,8 +17,9 @@
  @import "bootstrap/scss/bootstrap";
 
  .base-container {
-  // margin: 0 auto;
-  padding: 1rem 1rem 90px 1rem;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-bottom: 90px;
 }
 
 .mw-sm {
