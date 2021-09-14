@@ -19,6 +19,7 @@
  .base-container {
   margin: 0 auto;
   padding: 1rem;
+  padding-bottom: 90px;
 }
 
 .mw-sm {
@@ -82,13 +83,14 @@ body {
   background-color: cornflowerblue;
 }
 
-footer {
+.footer {
   text-align: center;
   width: 100%;
-  padding: 10px 0;
+  // padding: 10px 0;
   color: white;
   background-color: midnightblue;
   p {
+    padding: 10px 0;
     margin-bottom: 0;
   }
 }
