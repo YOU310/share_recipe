@@ -40,14 +40,13 @@
   justify-content: center;
   height: 36px;
   margin-top: 5px;
-  color: darkslategrey;
-  background-color: rgb(224, 222, 222);
-  // border-radius: 4px;
+  color: midnightblue;
+  background-color: white;
   border: solid 1px ;
   transition: 0.3s;
 }
 .btn-back:hover {
-  background: dimgray;
+  background: midnightblue;
   color: #FFF;
   text-decoration: none;
 }

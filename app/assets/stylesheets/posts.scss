@@ -123,10 +123,10 @@ textarea {
   width: 45%;
 }
 .show-btn {
-  border: solid 1px rgb(4, 148, 4);
+  border: solid 1px #00a349;
   border-radius: 20px;
   box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
-  color: rgb(4, 148, 4);
+  color: #00a349;
   width: 100%;
   text-align: center;
   display: inline-block;
@@ -136,7 +136,7 @@ textarea {
 }
 
 .show-btn:hover {
-  background: rgb(76, 167, 76);
+  background: #00a349;
   text-decoration: none;
   color: white;
 }
