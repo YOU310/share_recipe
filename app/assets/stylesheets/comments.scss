@@ -19,10 +19,12 @@
 }
 
 .comment-index-btn-left {
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
   margin-right: 5px;
   width: 45%;
 }
 .comment-index-btn-right {
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
   margin-left: 5px;
   width: 45%;
 }
@@ -32,19 +34,19 @@
 }
 
 .btn-back {
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 36px;
   margin-top: 5px;
-  color: darkslategrey;
-  background-color: rgb(224, 222, 222);
-  border-radius: 4px;
+  color: midnightblue;
+  background-color: white;
   border: solid 1px ;
   transition: 0.3s;
 }
 .btn-back:hover {
-  background: dimgray;
+  background: midnightblue;
   color: #FFF;
   text-decoration: none;
 }

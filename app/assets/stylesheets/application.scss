@@ -8,7 +8,7 @@
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
+ * It is generally better to create a new file per style scope
  *
  *= require_tree .
  *= require_self
@@ -71,7 +71,7 @@ body {
   background-color: ivory;
   border-radius: 15px;
   border: none;
-  color: royalblue;
+  color: rgb(42, 42, 141);
 }
 .page-item:first-child .page-link {
   border-radius: 15px;
@@ -80,7 +80,7 @@ body {
   border-radius: 15px;
 }
 .page-item.active .page-link {
-  background-color: cornflowerblue;
+  background-color: rgb(42, 42, 141);
 }
 
 .footer {
