@@ -6,7 +6,9 @@
 
   <div class="row">
     <div class="d-flex col-lg-7">
-      <div class="row d-flex align-items-center">
+      <div class="row d-flex align-items-center w-100">
+
+      <% if false %>
         <div class="d-flex align-items-center col-sm-5">
           <a class="logo_link" href="#">
             <%= image_tag("logo.png", size: "100x100") %>
@@ -16,6 +18,7 @@
             <p class="app-name mb-0">Resiper</p>
           </div>
         </div>
+      <% end %>
 
         <div class="px-3 my-2 col-sm-7">
           <%= search_form_for @q do |f| %>
