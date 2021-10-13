@@ -1,8 +1,7 @@
 <div class="fixed-top">
   <nav class="navbar navbar-expand-sm bg-white navbar-light pt-0 pb-0 px-0 navbar-top">
-  <a class="navbar-brand logo-link py-0" href="#">
-    <%= image_tag("logo.png", size: "80x80") %>
-  </a>
+  <%= link_to image_tag("logo.png", class: "navbar-brand logo-link py-0"), posts_path %>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
