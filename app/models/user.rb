@@ -8,8 +8,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :password, confirmation: true
+
   with_options presence: true do
     validates :email
+    validates :password_confirmation
   end
 
   def self.guest
