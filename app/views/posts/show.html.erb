@@ -42,7 +42,8 @@
         <% if @post.video? %>
           <%= video_tag @post.video_url, :controls => true, class: "video" %>
         <% else %>
-          <img src="/assets/images/default_video.png" class="video-img">
+          <%= image_tag "default_video.png", class: "video-img" %>
+          <%# <img src="/assets/images/default_video.png" class="video-img"> %>
           <p class="img-text video-text">動画は未設定です</p>
         <% end %>
       </div>
