@@ -16,7 +16,6 @@
       <img src="<%= @post.image_url %>" class="show-img">
     <% else %>
       <%= image_tag "default.png", class: "card-img-top img" %>
-      <%# <img src="/assets/images/default.png" class="show-img"> %>
       <p class="img-text">画像は未設定です</p>
     <% end %>
   </div>
@@ -44,7 +43,6 @@
           <%= video_tag @post.video_url, :controls => true, class: "video" %>
         <% else %>
           <%= image_tag "default_video.png", class: "video-img" %>
-          <%# <img src="/assets/images/default_video.png" class="video-img"> %>
           <p class="img-text video-text">動画は未設定です</p>
         <% end %>
       </div>
