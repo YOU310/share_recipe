@@ -1,5 +1,4 @@
 ActiveAdmin.register User do
-
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -23,5 +22,26 @@ ActiveAdmin.register User do
     column :name
     column :email
     actions
+  end
+
+  show do
+    attributes_table do
+      row :id
+      row :name
+      row :email
+      row :created_at
+    end
+    active_admin_comments
+  end
+
+  form do |f|
+    f.semantic_errors
+    f.inputs do
+      input :name
+      input :email
+      input :password
+      input :password_confirmation
+    end
+    f.actions
   end
 end
