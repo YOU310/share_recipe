@@ -15,7 +15,8 @@
     <% if @post.image? %>
       <img src="<%= @post.image_url %>" class="show-img">
     <% else %>
-      <img src="/assets/images/default.png" class="show-img">
+      <%= image_tag "default.png", class: "card-img-top img" %>
+      <%# <img src="/assets/images/default.png" class="show-img"> %>
       <p class="img-text">画像は未設定です</p>
     <% end %>
   </div>
