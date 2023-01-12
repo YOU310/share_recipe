@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: share_recipes_production
-  username: share_recipes
-  password: <%= ENV['SHARE_RECIPES_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: share_recipes_production
+  # username: share_recipes
+  # password: <%= ENV['SHARE_RECIPES_DATABASE_PASSWORD'] %>
